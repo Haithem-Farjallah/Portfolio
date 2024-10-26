@@ -18,7 +18,7 @@ const App = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
-    <div className=" dark:bg-black bg-white  overflow-y-hidden relative">
+    <div className="h-screen dark:bg-black bg-white  overflow-y-hidden relative">
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Home />
     </div>
