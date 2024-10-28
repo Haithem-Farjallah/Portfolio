@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FaArrowRightLong, FaArrowDown } from "react-icons/fa6";
 import gsap from "gsap";
+import Curve from "./curve/curve";
 
 export default function Home() {
   const [text] = useState(
@@ -143,7 +144,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="z-20">
+      <Curve />
       <div className="relative h-screen  md:h-screen flex justify-center items-center overflow-hidden">
         <div
           ref={content}
@@ -153,7 +155,7 @@ export default function Home() {
           <div className="absolute w-[650px] h-[650px] bg-blue-500/70 rounded-full blur-[100px] z-10 animate-move-around-reverse left-3/4 top-1/2"></div>
 
           <div className="relative z-20 mx-auto max-w-xl md:max-w-4xl p-6">
-            <p className="text-black dark:text-white md:text-3xl font-sans">
+            <p className="text-[#1c1d20] dark:text-white md:text-3xl font-sans">
               {text.split("").map((char, index) => (
                 <span className="heroSection" key={index}>
                   {char}
@@ -161,7 +163,7 @@ export default function Home() {
               ))}
             </p>
 
-            <div className="connect flex items-center mt-5  text-black dark:text-white">
+            <div className="connect flex items-center mt-5  text-[#1c1d20] dark:text-white">
               <FaArrowRightLong className="h-4" />
               <p
                 className="font-medium md:text-lg underline underline-offset-8 py-8 p-2 mb-1 "
@@ -173,7 +175,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="Scroll text-black dark:text-white bottom-5  z-20 flex gap-2 font-sans items-center right-10 text-xs absolute">
+          <div className="Scroll text-[#1c1d20] dark:text-white bottom-5  z-20 flex gap-2 font-sans items-center right-10 text-xs absolute">
             <span>Scroll to discover</span>
             <FaArrowDown className="mt-1" />
           </div>

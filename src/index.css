@@ -7,6 +7,10 @@
   cursor: none;
 }
 
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
 html.lenis,
 html.lenis body {
   height: auto;
@@ -26,4 +30,24 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+/* Scrollbar container (fixed at the top-right corner) */
+.scrollbar-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100vh;
+  background-color: transparent;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Scrollbar thumb */
+.scrollbar-thumb {
+  width: 10px;
+  background-color: #3498db; /* Color of the scrollbar thumb */
+  border-radius: 5px;
+  transition: height 0.3s ease;
 }
