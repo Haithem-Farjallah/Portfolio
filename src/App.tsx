@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Cursor from "./components/Cursor";
-import { div } from "three/webgpu";
+import { ReactLenis } from "lenis/react";
 
 const App = () => {
   const [theme, setTheme] = useState<string>(
@@ -16,15 +16,57 @@ const App = () => {
     }
     localStorage.setItem("theme", theme);
   }, [theme]);
+
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
+
   return (
     <div>
       <Cursor />
-      <div className="h-screen dark:bg-black bg-white  overflow-y-hidden relative">
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
-        <Home />
+      <div className=" dark:bg-black bg-white  overflow-y-hidden relative">
+        <ReactLenis
+          root
+          options={{ infinite: true, duration: 1.2, smoothWheel: true }}
+        >
+          <Navbar theme={theme} toggleTheme={toggleTheme} />
+          <Home />
+          <div>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s"
+              alt=""
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s"
+              alt=""
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s"
+              alt=""
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s"
+              alt=""
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s"
+              alt=""
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s"
+              alt=""
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s"
+              alt=""
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s"
+              alt=""
+            />
+          </div>
+          <Home />
+        </ReactLenis>
       </div>
     </div>
   );

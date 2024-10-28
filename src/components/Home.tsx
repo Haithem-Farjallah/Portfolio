@@ -144,7 +144,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="relative h-[90vh] md:h-screen flex justify-center items-center overflow-hidden">
+      <div className="relative h-screen  md:h-screen flex justify-center items-center overflow-hidden">
         <div
           ref={content}
           className="absolute inset-0 m-3 overflow-hidden bg-white/5 border border-gray-900/5 dark:border-none backdrop-blur-md shadow flex justify-center items-center rounded-lg"
