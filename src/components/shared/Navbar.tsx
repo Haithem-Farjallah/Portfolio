@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 import Switch from "react-switch";
 import gsap from "gsap";
+import { Link } from "react-router-dom";
 const Navbar = ({
   theme,
   toggleTheme,
@@ -28,18 +29,18 @@ const Navbar = ({
   }, []);
 
   return (
-    <div className="absolute top-0 z-20 w-full px-10 ">
+    <div className=" fixed z-10 top-0  w-full px-10 ">
       <nav
         ref={navRef}
-        className="flex justify-between items-center p-5 font-sans text-sm mt-2 text-black dark:text-white bg-transparent"
+        className="flex justify-between items-center p-5 font-sans text-sm mt-2 text-[#1c1d20] dark:text-white bg-transparent"
       >
         <h1>Haithem Farjallah</h1>
         <div className="navbar flex items-center gap-8 ">
-          <a href="#">Home</a>
-          <a href="#">Projects</a>
-          <a href="#">Contact</a>
+          <Link to="/home">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
           <Switch
-            className=" switch outline-none"
+            className=" switch outline-none border dark:border-[#111d11]"
             checked={theme === "light"}
             onChange={toggleTheme}
             offColor="#000000"
