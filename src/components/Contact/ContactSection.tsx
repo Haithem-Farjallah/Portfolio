@@ -1,6 +1,6 @@
-import Curve from "./curve/curve";
+import Curve from "../shared/curve/Curve";
 
-const Contact = () => {
+const ContactSection = () => {
   return (
     <div>
       <Curve />
@@ -9,4 +9,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactSection;

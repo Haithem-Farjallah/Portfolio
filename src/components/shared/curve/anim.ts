@@ -4,7 +4,7 @@ export const text = {
   },
   enter: {
     opacity: 0,
-    top: -100,
+    top: -500,
     transition: { duration: 0.75, delay: 0.35, ease: [0.76, 0, 0.24, 1] },
     transitionEnd: { top: "47.5%" },
   },
