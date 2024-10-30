@@ -7,10 +7,6 @@
   cursor: none;
 }
 
-body::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Opera */
-}
-
 html.lenis,
 html.lenis body {
   height: auto;
