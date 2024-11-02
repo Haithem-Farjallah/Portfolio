@@ -7,7 +7,7 @@ const Projects: React.FC = () => {
   return (
     <div className="w-full  text-white  ">
       <h1 className=" m-4 my-10 text-2xl">Featured Projects :</h1>
-      <div className="flex flex-wrap mx-auto px-5 max-w-7xl  justify-around  ">
+      <div className="flex flex-wrap mx-auto px-5 max-w-7xl  lg:justify-between justify-center  ">
         {projects.map((project) => (
           <div key={project.id} className="flex flex-col max-w-lg gap-2 mb-5 ">
             <div className="">
