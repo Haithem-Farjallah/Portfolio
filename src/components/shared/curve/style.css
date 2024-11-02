@@ -9,8 +9,7 @@
 }
 
 .curve .background {
-  transition: opacity 0s linear 0.1s;
-  background-color: black;
+  transition: opacity 0s;
 }
 
 .curve .route {

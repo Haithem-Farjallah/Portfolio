@@ -56,9 +56,12 @@ const Curve = () => {
 
   return (
     <div className="page curve fixed top-[50%] left-[50%] z-50 ">
-      <div style={{ opacity: dimensions.width == null ? 1 : 0 }} />
-      <motion.p className="route " {...anim(text)}>
-        <div className="dark:text-white text-[#1c1d20] font-medium ">
+      <div
+        className="background dark:bg-black bg-[#d1d1d1]"
+        style={{ opacity: dimensions.width == null ? 1 : 0 }}
+      />
+      <motion.p className="route  w-screen" {...anim(text)}>
+        <div className="  dark:text-white text-[#1c1d20] font-medium  ">
           <p>{routes[location.pathname]}</p>
         </div>
       </motion.p>
