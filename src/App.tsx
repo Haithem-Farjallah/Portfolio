@@ -7,11 +7,11 @@ import ScrollBar from "./components/shared/ScrollBar";
 const App = () => {
   return (
     <ScrollBar>
+      <ScrollToTop />
       <div className="dark:bg-black bg-white overflow-y-hidden">
         <MainLayout>
           <AppRoutes />
         </MainLayout>
-        <ScrollToTop />
         <Cursor />
       </div>
     </ScrollBar>
