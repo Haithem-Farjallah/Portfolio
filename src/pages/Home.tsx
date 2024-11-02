@@ -2,6 +2,7 @@ import React from "react";
 import Intro from "../components/Home/Intro";
 import { ReactLenis } from "lenis/react";
 import Curve from "../components/shared/curve/Curve";
+import Projects from "../components/Home/Projects";
 
 const Home: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
         }}
       >
         <Intro />
+        <Projects />
         <Intro />
       </ReactLenis>
     </React.Fragment>
