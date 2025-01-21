@@ -1,39 +1,79 @@
-import React from "react";
 import { projects } from "../data/Projects";
-import { FaGithub } from "react-icons/fa6";
-import { LuLink } from "react-icons/lu";
 
-const Projects: React.FC = () => {
+const Projects = () => {
   return (
-    <div className="w-full  text-white  ">
-      <h1 className=" m-4 my-10 text-2xl">Featured Projects :</h1>
-      <div className="flex flex-wrap mx-auto px-5 max-w-7xl  lg:justify-between justify-center  ">
-        {projects.map((project) => (
-          <div key={project.id} className="flex flex-col max-w-lg gap-2 mb-5 ">
-            <div className="">
-              <img src={project.image} alt="image project" />
+    <div className="">
+      <h2 className="text-2xl my-12 px-5 dark:text-white text-black">
+        Projects
+      </h2>
+      <div className="flex flex-col gap-12 lg:max-w-7xl mx-auto md:max-w-3xl max-w-lg">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className={`flex flex-col md:flex-row ${
+              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+            } gap-3`}
+          >
+            <div className="w-full md:w-1/4 h-72 relative group">
+              <img
+                src={project.image}
+                alt={project.name}
+                className={`rounded-lg object-cover transition-opacity duration-300 w-full h-full ${
+                  index % 2 === 0 ? "md:rounded-bl-xl" : "md:rounded-br-xl"
+                } group-hover:opacity-0`}
+              />
+              <video
+                src={project.video}
+                className="absolute inset-0 w-full h-full rounded-lg object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                autoPlay
+                loop
+                muted
+              />
             </div>
-            <div className=" px-1 flex flex-col gap-1">
-              <div className="flex items-center  justify-between">
-                <h1 className=" text-xl">{project.name}</h1>
-                <div className="flex items-center gap-5">
-                  <a href={project.github}>
-                    <FaGithub className=" text-xl" />
-                  </a>
-                  <a href={project.link}>
-                    <LuLink className=" text-xl" />
-                  </a>
-                </div>
-              </div>
-              <p className="text-[#C4C4C4]">{project.description}</p>
-              <div className="flex gap-2 text-sm text-blue-500/70 ">
-                {project.technologies.map((tech, index) => (
-                  <span key={tech}>
-                    {tech} {index !== project.technologies.length - 1 && "-"}
+
+            <div
+              className={`w-full md:w-3/4 bg-[#1c1d20] text-white flex flex-col justify-between px-6 py-8 rounded-lg border border-white/20 ${
+                index % 2 === 0 ? "md:rounded-br-xl" : "md:rounded-bl-xl"
+              }`}
+            >
+              <h3 className="font-semibold text-3xl text-center md:text-left">
+                {project.name}
+              </h3>
+
+              <p className="text-lg text-gray-300 text-center md:text-left">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-sm bg-white/90 px-3 py-1 rounded text-blue-500 font-medium"
+                  >
+                    {tech}
                   </span>
                 ))}
               </div>
-              <div></div>
+
+              {/* Links */}
+              <div className="flex gap-4 justify-center md:justify-start">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-500 hover:underline text-lg"
+                >
+                  Live Demo
+                </a>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-500 hover:underline text-lg"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
           </div>
         ))}

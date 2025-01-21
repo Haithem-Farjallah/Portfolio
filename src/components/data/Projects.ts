@@ -6,43 +6,44 @@ interface Project {
   link?: string;
   github: string;
   image?: string;
+  video?: string; // Added video field
 }
+
 import demo from "../../assets/demo.png";
+import test from "../../assets/test.mp4";
+
 export const projects: Project[] = [
   {
     id: "1",
-    name: "Project 1",
-    description: "This is a project description",
-    technologies: ["React", "TypeScript"],
+    name: "Portfolio Website",
+    description:
+      "A responsive portfolio website built with React and TypeScript.A responsive portfolio website built with React and TypeScriptA responsive portfolio website built with React and TypeScript",
+    technologies: ["React", "TypeScript", "CSS"],
     link: "https://example.com",
-    github: "",
+    github: "https://github.com/username/portfolio-website",
     image: demo,
+    video: test,
   },
   {
     id: "2",
-    name: "Project 1",
-    description: "This is a project description",
-    technologies: ["React", "TypeScript"],
+    name: "Portfolio Website",
+    description:
+      "A responsive portfolio website built with React and TypeScript.A responsive portfolio website built with React and TypeScriptA responsive portfolio website built with React and TypeScript",
+    technologies: ["React", "TypeScript", "CSS"],
     link: "https://example.com",
-    github: "",
+    github: "https://github.com/username/portfolio-website",
     image: demo,
+    video: test,
   },
   {
     id: "3",
-    name: "Project 1",
-    description: "This is a project description",
-    technologies: ["React", "TypeScript"],
+    name: "Portfolio Website",
+    description:
+      "A responsive portfolio website built with React and TypeScript.A responsive portfolio website built with React and TypeScriptA responsive portfolio website built with React and TypeScript",
+    technologies: ["React", "TypeScript", "CSS"],
     link: "https://example.com",
-    github: "",
+    github: "https://github.com/username/portfolio-website",
     image: demo,
-  },
-  {
-    id: "4",
-    name: "Project 1",
-    description: "This is a project description",
-    technologies: ["React", "TypeScript"],
-    link: "https://example.com",
-    github: "",
-    image: demo,
+    video: test,
   },
 ];
