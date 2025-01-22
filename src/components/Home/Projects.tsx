@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { projects } from "../data/Projects";
 
 const Projects = () => {
@@ -36,9 +37,12 @@ const Projects = () => {
                 index % 2 === 0 ? "md:rounded-br-xl" : "md:rounded-bl-xl"
               }`}
             >
-              <h3 className="font-semibold text-3xl text-center md:text-left">
+              <NavLink
+                to={`/projects/${project.id}`}
+                className="font-semibold text-3xl text-center md:text-left hover:underline w-fit"
+              >
                 {project.name}
-              </h3>
+              </NavLink>
 
               <p className="text-lg text-gray-300 text-center md:text-left">
                 {project.description}

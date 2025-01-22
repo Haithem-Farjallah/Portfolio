@@ -3,12 +3,27 @@ import { motion } from "framer-motion";
 import { text, curve, translate } from "./anim";
 import "./style.css";
 import { useLocation } from "react-router-dom";
+import { projects } from "../../data/Projects";
 
 const routes: { [key: string]: string } = {
   "/": "Welcome ",
   "/home": "Home",
   "/about": "About",
   "/contact": "Contact",
+  dynamic: getProjectName(), // will display the project name
+};
+
+function getProjectName() {
+  const id = location.pathname.split("/")[2];
+  const project = projects.find((p) => p.id == id);
+  return project?.name || " Project";
+}
+
+const getRouteName = (pathname: string): string => {
+  if (pathname.startsWith("/projects/")) {
+    return routes["dynamic"];
+  }
+  return routes[pathname] || "Unknown Route";
 };
 
 const anim = (variants: any) => {
@@ -38,9 +53,6 @@ const Curve = () => {
   });
 
   useEffect(() => {
-    {
-      console.log(routes[location.pathname]);
-    }
     function resize() {
       setDimensions({
         width: window.innerWidth,
@@ -62,7 +74,7 @@ const Curve = () => {
       />
       <motion.p className="route  w-screen" {...anim(text)}>
         <div className="  dark:text-white text-[#1c1d20] font-medium  ">
-          <p>{routes[location.pathname]}</p>
+          <p>{getRouteName(location.pathname)}</p>
         </div>
       </motion.p>
       {dimensions.width != null && dimensions.height != null && (
