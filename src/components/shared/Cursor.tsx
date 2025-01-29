@@ -77,6 +77,7 @@ const Cursor = () => {
         link.removeEventListener("mouseenter", handleLinkHover);
         link.removeEventListener("mouseleave", handleLinkHoverOut);
       });
+      handleLinkHoverOut();
     };
   });
 

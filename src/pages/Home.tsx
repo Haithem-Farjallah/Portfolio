@@ -6,6 +6,7 @@ import Projects from "../components/Home/Projects";
 import Experience from "../components/Home/Experience";
 import LineSeparator from "../components/shared/LineSeparator";
 import Education from "../components/Home/Education";
+import Certeficats from "../components/Home/Certeficats";
 
 const Home: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const Home: React.FC = () => {
         <Experience />
         <LineSeparator />
         <Education />
+        <Certeficats />
         <Intro />
       </ReactLenis>
     </React.Fragment>

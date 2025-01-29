@@ -3,7 +3,7 @@ import { projects } from "../data/Projects";
 
 const Projects = () => {
   return (
-    <div className="">
+    <div className="my-24">
       <h2 className="text-2xl my-12 px-5 dark:text-white text-black">
         Projects
       </h2>
@@ -60,7 +60,7 @@ const Projects = () => {
               </div>
 
               {/* Links */}
-              <div className="flex gap-4 justify-center md:justify-start">
+              <div className="flex gap-4 justify-center md:justify-start ">
                 <a
                   href={project.link}
                   target="_blank"

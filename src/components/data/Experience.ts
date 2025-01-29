@@ -1,4 +1,4 @@
-interface experience {
+export interface Experience {
   id: string;
   title: string;
   company: string;
@@ -7,7 +7,7 @@ interface experience {
   location: string;
 }
 
-export const experiences: experience[] = [
+export const experiences: Experience[] = [
   {
     id: "1",
     title: "Frontend Engineer (Remote)",
