@@ -5,6 +5,7 @@
 
 * {
   cursor: none;
+  font-family: Epilogue, sans-serif;
 }
 
 html.lenis,
@@ -50,7 +51,7 @@ html.lenis body {
 
 /****/
 .menu {
-  padding: 10rem 0 20vh 0;
+  padding: 3rem 0 20vh 0;
   width: 90vw;
   position: relative;
   display: flex;
@@ -154,4 +155,9 @@ html.lenis body {
   .menu__item-sub {
     display: flex;
   }
+}
+
+.vertical-timeline::before {
+  background: #2e2e2e !important;
+  width: 2px !important;
 }
