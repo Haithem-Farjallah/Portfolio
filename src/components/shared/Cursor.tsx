@@ -66,17 +66,17 @@ const Cursor = () => {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    document.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("mouseenter", handleLinkHover);
-      link.addEventListener("mouseleave", handleLinkHoverOut);
-    });
+    // document.querySelectorAll("a").forEach((link) => {
+    //   link.addEventListener("mouseenter", handleLinkHover);
+    //   link.addEventListener("mouseleave", handleLinkHoverOut);
+    // });
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      document.querySelectorAll("a").forEach((link) => {
-        link.removeEventListener("mouseenter", handleLinkHover);
-        link.removeEventListener("mouseleave", handleLinkHoverOut);
-      });
+      // document.querySelectorAll("a").forEach((link) => {
+      //   link.removeEventListener("mouseenter", handleLinkHover);
+      //   link.removeEventListener("mouseleave", handleLinkHoverOut);
+      // });
       handleLinkHoverOut();
     };
   });

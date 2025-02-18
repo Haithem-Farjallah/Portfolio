@@ -37,7 +37,7 @@ const Navbar = ({
         <h1>Haithem Farjallah</h1>
         <div className="navbar flex items-center gap-8 ">
           <Link to="/home">Home</Link>
-          <Link to="/about">About</Link>
+          <Link to="/skills">Skills</Link>
           <Link to="/contact">Contact</Link>
           <Switch
             className=" switch outline-none border dark:border-[#111d11]"

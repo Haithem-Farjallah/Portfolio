@@ -1,8 +1,8 @@
-import About from "../pages/About";
 import Contact from "../pages/Contact";
 import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import SingleProject from "../pages/SingleProject";
+import Skills from "../pages/Skills";
 
 const AppRoutes = () => {
   const routes = [
@@ -17,9 +17,9 @@ const AppRoutes = () => {
       element: <Home />,
     },
     {
-      path: "/about",
-      element: <About />,
-      key: "/about",
+      path: "/skills",
+      element: <Skills />,
+      key: "/skills",
     },
     {
       path: "/contact",

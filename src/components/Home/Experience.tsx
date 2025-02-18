@@ -6,49 +6,88 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-
+import { VscDebugBreakpointLog } from "react-icons/vsc";
+import { FaCalendarAlt, FaClock, FaGithub } from "react-icons/fa";
+import { MdWork } from "react-icons/md";
+import { IoLocationSharp } from "react-icons/io5";
+import { techIcons } from "../data/TechIcons";
 const ExperienceDetails = ({ experience }: { experience: Experience }) => (
-  <div key={experience.id} className=" space-y-2">
-    <div className="flex items-center justify-between">
-      <h1 className="text-xl font-medium">{experience.title}</h1>
-      <h1 className=" text-gray-400">{experience.date}</h1>
+  <div className="  flex  flex-col md:flex-row gap-2  space-x-3">
+    <div className="w-[100px] h-[100px] md:w-[150px] md:h-[150px]  relative">
+      <img
+        src={experience.image}
+        alt="company logo"
+        className="   rounded-xl "
+      />
     </div>
-    <div className="flex items-center  space-x-2 text-blue-500/70 ">
-      <p>{experience.location}</p>
-      <span>/</span>
-      <h1>{experience.company}</h1>
-    </div>
-    <div className="space-y-2  text-gray-300 text-sm">
-      {experience.description.map((desc, index) => (
-        <p key={index}> - {desc}</p>
-      ))}
+    <div className="text-white flex flex-col gap-5 ">
+      <h1 className="text-2xl font-semibold ">{experience.title}</h1>
+      <div className="flex flex-wrap items-center gap-2 text-sm ">
+        <div className="flex items-center gap-1 border-2 border-[#2e2e2e] px-3 py-[2px]  rounded-2xl text-gray-300  ">
+          <MdWork className="mt-[2px]" />
+          <span>{experience.company}</span>
+        </div>
+        <div className="flex items-center gap-1 border-2 border-[#2e2e2e] px-3 py-[2px]  rounded-2xl text-gray-300 ">
+          <IoLocationSharp className="mt-[2px]" />
+          <span>{experience.location}</span>
+        </div>
+        <div className="flex items-center gap-1 border-2 border-[#2e2e2e] px-3 py-[2px]  rounded-2xl text-gray-300 ">
+          <MdWork className="mt-[2px]" />
+          <span>{experience.type}</span>
+        </div>
+      </div>
+
+      <div className="space-y-1 font-[400]">
+        <div className=" flex items-center space-x-1  text-sm border-b py-2 border-[#2e2e2e]">
+          <FaCalendarAlt />
+          <span>{experience.date} </span>
+        </div>
+        <div className=" flex items-center space-x-1  text-sm border-b py-2  border-[#2e2e2e]">
+          <FaClock />
+          <span>{experience.duration} </span>
+        </div>
+      </div>
+
+      <h1 className=" font-medium my-1">{experience.summary}</h1>
+
+      <div className="flex gap-2 space-x-3  text-lg ">
+        {experience.technologies.map((tech, index) => (
+          <div key={index} className="flex items-center ">
+            {techIcons[tech]}
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 );
 
 const Experience: React.FC = () => {
   return (
-    <div className="container mx-auto p-5 dark:text-white text-black  block ">
-      <h1 className=" mb-5 text-lg font-semibold uppercase tracking-wide">
+    <div className="container  mx-auto p-5 dark:text-white text-black block">
+      <h1 className="mb-5 text-lg font-semibold uppercase tracking-wide">
         Experience
       </h1>
-      <VerticalTimeline>
+      <VerticalTimeline animate={true}>
         {experiences.map((experience: Experience, index: number) => (
           <VerticalTimelineElement
+            key={index}
             className="vertical-timeline-element--work"
             contentStyle={{
               background: "#000",
-              border: "1px solid #fff",
+              border: "2px solid #2E2E2E",
+              boxShadow: "none",
+              borderRadius: "20px",
             }}
-            contentArrowStyle={{ borderRight: "10px solid  #fff" }}
-            date="2011 - present"
+            contentArrowStyle={{
+              borderRight: "10px solid #2E2E2E",
+            }}
             iconStyle={{
               background: "#000",
-              color: "#fff",
-              border: "1px solid #fff",
+              boxShadow: "none",
             }}
+            icon={<VscDebugBreakpointLog />}
           >
-            <ExperienceDetails experience={experience} key={index} />
+            <ExperienceDetails experience={experience} />
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>

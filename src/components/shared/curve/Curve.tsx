@@ -8,7 +8,7 @@ import { projects } from "../../data/Projects";
 const routes: { [key: string]: string } = {
   "/": "Welcome ",
   "/home": "Home",
-  "/about": "About",
+  "/skills": "Skills",
   "/contact": "Contact",
   dynamic: getProjectName(), // will display the project name
 };

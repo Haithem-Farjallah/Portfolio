@@ -1,59 +1,61 @@
+import xsustain from "../../assets/experience/xsustain.jpg";
+import etnafes from "../../assets/experience/etnafes.jpg";
+
 export interface Experience {
-  id: string;
+  image: string;
   title: string;
   company: string;
-  date: string;
-  description: string[];
   location: string;
+  type: string;
+  date: string;
+  duration: string;
+  summary: string;
+  description: string;
+  technologies: string[];
 }
 
 export const experiences: Experience[] = [
   {
-    id: "1",
+    image: xsustain,
     title: "Frontend Engineer (Remote)",
     company: "TechWave Solutions",
-    date: "Jul 2021 - Present",
-    description: [
-      "Developing and maintaining responsive user interfaces using React and Tailwind CSS.",
-      "Implementing complex UI interactions and ensuring cross-browser compatibility.",
-      "Collaborating with backend engineers to integrate APIs using Redux Saga.",
-    ],
     location: "New York, USA",
+    type: "Full-time",
+    date: "Jul 2021 - Present",
+    duration: "1 year",
+    summary:
+      "Developing and maintaining responsive user interfaces using React and Tailwind CSS.",
+    description:
+      "Implementing complex UI interactions and ensuring cross-browser compatibility.",
+    technologies: ["React", "TailwindCSS", "MongoDB"],
   },
   {
-    id: "2",
+    image: xsustain,
     title: "Software Developer",
     company: "Wevoz Innovations",
-    date: "Jun 2020 - Jun 2021",
-    description: [
-      "Built and optimized mobile and web applications using React and React Native.",
-      "Developed automation scripts for data scraping using Python and Selenium.",
-      "Contributed to PHP backend development and API integration for various client projects.",
-    ],
     location: "Milan, Italy",
+    type: "Full-time",
+    date: "Jun 2020 - Jun 2021",
+    duration: "1 year",
+    summary:
+      "Built and optimized mobile and web applications using React and React Native.",
+    description:
+      "Developed automation scripts for data scraping using Python and Selenium.",
+    technologies: ["React", "Python", "Selenium"],
   },
   {
-    id: "3",
+    image: etnafes,
     title: "Frontend Engineer (Contractor)",
     company: "FreeBeings",
-    date: "Mar 2019 - Aug 2020",
-    description: [
-      "Worked on multiple client projects to deliver responsive and modern web applications.",
-      "Occasionally led frontend teams and mentored junior developers on best practices.",
-      "Collaborated with designers and project managers to ensure design accuracy and functionality.",
-    ],
     location: "Remote",
-  },
-  {
-    id: "4",
-    title: "Junior Web Developer",
-    company: "InnoTech Labs",
-    date: "Jan 2018 - Feb 2019",
-    description: [
-      "Assisted in the development of e-commerce websites using HTML, CSS, and JavaScript.",
-      "Performed debugging and troubleshooting for frontend issues reported by QA teams.",
-      "Participated in code reviews and contributed to frontend feature improvements.",
-    ],
-    location: "San Francisco, USA",
+    type: "Contract",
+
+    date: "Mar 2019 - Aug 2020",
+    duration: "1 year",
+    summary:
+      "Worked on multiple client projects to deliver responsive and modern web applications.",
+    description:
+      "Occasionally led frontend teams and mentored junior developers on best practices.",
+    technologies: ["React", "JavaScript", "HTML", "CSS"],
   },
 ];

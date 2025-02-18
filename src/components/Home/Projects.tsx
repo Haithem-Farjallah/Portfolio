@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { projects } from "../data/Projects";
+import { NavLink } from "react-router-dom";
 
 const Projects = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -32,14 +33,17 @@ const Projects = () => {
   };
 
   return (
-    <main className="bg-black text-white h-[200vh] ">
-      <h1 className="flex text-xl">Projects</h1>
+    <main className="bg-black text-white  ">
+      <h1 className=" mt-12 text-xl font-semibold uppercase tracking-wide ml-12">
+        Projects
+      </h1>
       <nav className="menu ">
         {projects.map((project, index) => (
-          <a
-            style={{ zIndex: 12 }}
+          <NavLink
             key={index}
-            className="menu__item font-[300]   hover:font-[400] "
+            to={`/projects/${project.id}`}
+            style={{ zIndex: 12 }}
+            className="menu__item font-[300] my-2  hover:font-[400] "
             data-img={`img/${index + 1}.jpg`}
             onMouseEnter={() =>
               project.image && handleMouseEnter(project.image)
@@ -50,10 +54,9 @@ const Projects = () => {
               <span className="menu__item-textinner">{project.name}</span>
             </span>
             <span className="menu__item-sub">{project.name}</span>
-          </a>
+          </NavLink>
         ))}
       </nav>
-
       {hoveredItem && (
         <img
           src={hoveredItem}
