@@ -1,6 +1,5 @@
 import { FaCalendarAlt, FaClock, FaGithub, FaNodeJs } from "react-icons/fa";
-import { MdWork } from "react-icons/md";
-import { IoLocationSharp } from "react-icons/io5";
+
 import {
   SiAngular,
   SiDocker,
