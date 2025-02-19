@@ -51,6 +51,7 @@ const Curve = () => {
     width: null,
     height: null,
   });
+  const [animationComplete, setAnimationComplete] = useState(false);
 
   useEffect(() => {
     function resize() {
@@ -67,7 +68,11 @@ const Curve = () => {
   }, []);
 
   return (
-    <div className="page curve fixed top-[50%] left-[50%] z-50 ">
+    <div
+      className={`page curve fixed top-[50%] left-[50%] ${
+        animationComplete ? "z-0" : "z-50"
+      }`}
+    >
       <div
         className="background dark:bg-black bg-[#d1d1d1]"
         style={{ opacity: dimensions.width == null ? 1 : 0 }}
@@ -78,13 +83,21 @@ const Curve = () => {
         </div>
       </motion.p>
       {dimensions.width != null && dimensions.height != null && (
-        <SVG width={dimensions.width} height={dimensions.height} />
+        <SVG
+          width={dimensions.width}
+          height={dimensions.height}
+          onAnimationComplete={() => setAnimationComplete(true)}
+        />
       )}
     </div>
   );
 };
 
-const SVG: React.FC<SVGProps> = ({ height, width }) => {
+const SVG: React.FC<SVGProps & { onAnimationComplete: () => void }> = ({
+  height,
+  width,
+  onAnimationComplete,
+}) => {
   const initialPath = `
     M0 300 
     Q${width / 2} 0 ${width} 300
@@ -108,6 +121,7 @@ const SVG: React.FC<SVGProps> = ({ height, width }) => {
           localStorage.getItem("theme") === "dark" ? "#111111" : "#d1d1d1"
         }`}
         {...anim(curve(initialPath, targetPath))}
+        onAnimationComplete={onAnimationComplete}
       />
     </motion.svg>
   );
