@@ -19,14 +19,14 @@ const Skills: React.FC = () => {
   return (
     <>
       <Curve />
-      <div className="pt-24 bg-black min-h-screen ">
+      <div className="pt-24  min-h-screen ">
         <div className="container max-w-7xl mx-auto p-5">
           <input
             type="text"
             placeholder="Search..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="border border-[#2e2e2e] bg-transparent w-full h-12 rounded-xl px-5 text-lg placeholder:text-[#4e4e4e] text-white transform duration-300 outline-none focus:shadow-md"
+            className="border border-[#545557] bg-transparent w-full h-12 rounded-xl px-5 text-lg placeholder:text-[#4e4e4e] text-white transform duration-300 outline-none focus:shadow-md"
           />
 
           <div className="space-y-12">
@@ -41,9 +41,9 @@ const Skills: React.FC = () => {
               filteredTechStack.map((stack, index) => (
                 <div key={index}>
                   <div className="flex items-center gap-5 my-12">
-                    <div className="bg-[#1e1e1e] h-[1px] w-[20px]" />
-                    <h1 className="text-[#3b3b3b] text-lg">{stack.category}</h1>
-                    <div className="flex-1 bg-[#1e1e1e] h-[1px]" />
+                    <div className="bg-[#545557] h-[1px] w-[20px]" />
+                    <h1 className="text-[#545557] text-lg">{stack.category}</h1>
+                    <div className="flex-1 bg-[#545557] h-[1px]" />
                   </div>
 
                   <div className="flex flex-wrap gap-6">

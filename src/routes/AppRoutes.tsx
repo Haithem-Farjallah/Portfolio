@@ -34,7 +34,7 @@ const AppRoutes = () => {
   ];
 
   return (
-    <div>
+    <div className="dark:text-white">
       <Routes>
         {routes.map((route) => (
           <Route path={route.path} key={route.key} element={route.element} />
