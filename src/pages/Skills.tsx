@@ -1,6 +1,5 @@
 import React from "react";
 import Curve from "../components/shared/curve/Curve";
-import demo from "../assets/demo.png";
 import { techStack } from "../components/data/Skills.ts";
 import { IoCubeOutline } from "react-icons/io5";
 
@@ -11,7 +10,7 @@ const Skills: React.FC = () => {
     .map((stack) => ({
       ...stack,
       items: stack.items.filter((item) =>
-        item.toLowerCase().includes(search.toLowerCase())
+        item.name.toLowerCase().includes(search.toLowerCase())
       ),
     }))
     .filter((stack) => stack.items.length > 0);
@@ -52,19 +51,19 @@ const Skills: React.FC = () => {
                         key={i}
                         className="relative flex items-center px-8 py-5 sm:w-full md:w-1/2 lg:w-[32%] border border-[#1e1e1e] text-white rounded-lg shadow-lg overflow-hidden"
                       >
-                        <span className="text-xl font-light">{item}</span>
+                        <span className="text-xl font-light">{item.name}</span>
 
-                        <div className="absolute right-0 h-24 w-48">
+                        <div className="absolute right-0 h-24 w-40">
                           <img
-                            src={demo}
+                            src={item.image}
                             alt="Tech Logo"
-                            className="h-full w-full object-cover object-bottom"
+                            className="h-full w-full object-cover  "
                             style={{
                               WebkitMaskImage:
                                 "linear-gradient(to left, black 20%, transparent 100%)",
                               maskImage:
                                 "linear-gradient(to left, black 50%, transparent 100%)",
-                              filter: "brightness(50%)",
+                              filter: "brightness(40%)",
                             }}
                           />
                         </div>
