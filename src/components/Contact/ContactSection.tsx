@@ -4,6 +4,7 @@ import { formFields, FormValues, socials } from "./formFields";
 import { FaArrowRight } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { sendEmail } from "./emailjs.browser";
+import { GoArrowDownRight } from "react-icons/go";
 
 const ContactSection = () => {
   const [formValues, setFormValues] = useState<FormValues>({
@@ -123,19 +124,22 @@ const ContactSection = () => {
             </button>
           </form>
         </div>
-        <div className="w-full xl:w-1/3 px-8 ">
-          <h1 className="text-[#545557] my-6 text-lg">Socials</h1>
-          {socials.map((social, index) => (
-            <div
-              key={index}
-              className="flex gap-3 w-fit items-center py-3 hover:underline  duration-300 ease-in-out transform hover:scale-105 "
-            >
-              <a href={social.url}>
-                <h1 className="text-xl">{social.name}</h1>
-              </a>
-              <FaArrowRight size={14} className=" " />
-            </div>
-          ))}
+        <div className="w-full xl:w-1/3 px-8 flex flex-col gap-8">
+          <GoArrowDownRight />
+          <div>
+            <h1 className="text-[#545557] my-6 text-lg">Socials</h1>
+            {socials.map((social, index) => (
+              <div
+                key={index}
+                className="flex gap-3 w-fit items-center py-3 hover:underline  duration-300 ease-in-out transform hover:scale-105 "
+              >
+                <a href={social.url}>
+                  <h1 className="text-xl">{social.name}</h1>
+                </a>
+                <FaArrowRight size={14} className=" " />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

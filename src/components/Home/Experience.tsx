@@ -64,7 +64,7 @@ const ExperienceDetails = ({ experience }: { experience: Experience }) => (
 const Experience: React.FC = () => {
   return (
     <div className="container  mx-auto p-5 dark:text-white text-black block">
-      <h1 className="mb-5 text-lg font-semibold uppercase tracking-wide">
+      <h1 className="mb-8 text-2xl font-bold uppercase tracking-wider text-center">
         Experience
       </h1>
       <VerticalTimeline animate={true}>
