@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Use the version your app requires
+          node-version: 22 # Use the version your app requires
 
       # Step 3: Inject .env variables and build the React app
       - name: Build React app
@@ -49,7 +49,7 @@ jobs:
             sudo rm -rf /var/www/html/*
 
             # Copy the new build files to the NGINX root
-            sudo cp -r build/* /var/www/html/
+            sudo cp -r dist/* /var/www/html/
 
             # Restart NGINX
             sudo systemctl restart nginx
