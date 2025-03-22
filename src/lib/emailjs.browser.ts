@@ -1,5 +1,5 @@
 import emailjs from "@emailjs/browser";
-import { FormValues } from "./formFields";
+import { FormValues } from "../components/Contact/formFields";
 export const sendEmail = (form: FormValues) => {
   emailjs
     .send(

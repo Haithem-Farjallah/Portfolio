@@ -24,7 +24,7 @@
     "react-router-dom": "^6.27.0",
     "react-switch": "^7.0.0",
     "react-vertical-timeline-component": "^3.5.3",
-    "swiper": "^11.2.4",
+    "swiper": "^8.4.5",
     "three": "^0.169.0",
     "uuid": "^11.0.5"
   },

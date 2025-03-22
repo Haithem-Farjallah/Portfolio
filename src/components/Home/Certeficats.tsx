@@ -25,7 +25,10 @@ export default function Certeficats() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full h-screen">
+    <div className="flex flex-col items-center w-full min-h-screen">
+      <h1 className="mb-20 text-5xl font-bold uppercase tracking-wider text-center">
+        Certificats
+      </h1>
       <div className="flex my-5">
         <AnimatePresence mode="popLayout" initial={false}>
           {visibleItems.map((item) => {

@@ -3,7 +3,7 @@ import Curve from "../shared/curve/Curve";
 import { formFields, FormValues, socials } from "./formFields";
 import { FaArrowRight } from "react-icons/fa6";
 import { motion } from "framer-motion";
-import { sendEmail } from "./emailjs.browser";
+import { sendEmail } from "../../lib/emailjs.browser";
 import { GoArrowDownRight } from "react-icons/go";
 
 const ContactSection = () => {

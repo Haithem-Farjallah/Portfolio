@@ -50,20 +50,6 @@ html.lenis body {
 }
 
 /****/
-.menu {
-  padding: 3rem 0 20vh 0;
-  width: 90vw;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  counter-reset: menucounter;
-}
 
 .menu__item {
   flex: none;
@@ -71,37 +57,6 @@ html.lenis body {
   justify-content: flex-start;
   position: relative;
   padding-left: 5rem;
-}
-
-.menu__item::before {
-  counter-increment: menucounter;
-  content: counters(menucounter, ".", decimal-leading-zero);
-  position: absolute;
-  left: 0;
-  border-left: 3px solid currentColor;
-  top: 20%;
-  height: 60%;
-  padding-left: 1rem;
-  display: flex;
-  align-items: center;
-  line-height: 1;
-  font-weight: bold;
-  opacity: 0;
-  transform: translateX(-1rem);
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-.menu__item:hover::before {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.menu__item-text {
-  position: relative;
-  padding: 0.5rem;
-  display: block;
-  overflow: hidden;
-  font-size: 6vw;
 }
 
 .menu__item-sub {
@@ -142,12 +97,10 @@ html.lenis body {
 
 @media screen and (min-width: 53em) {
   .menu {
-    padding-top: 20vh;
+    padding-top: 10vh;
+    padding-bottom: 20vh;
   }
-  .menu__item {
-    padding-left: 12rem;
-    justify-content: flex-start;
-  }
+
   .menu__item-text {
     padding: 1vh 0;
     font-size: 4vw;

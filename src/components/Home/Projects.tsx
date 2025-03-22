@@ -16,6 +16,7 @@ const Projects = () => {
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      setHoveredItem(null);
     };
   }, []);
 
@@ -33,17 +34,17 @@ const Projects = () => {
   };
 
   return (
-    <main className="bg-black text-white  ">
-      <h1 className=" mt-12 text-xl font-semibold uppercase tracking-wide ml-12">
+    <main className="mt-40  ">
+      <h1 className=" text-5xl font-bold uppercase tracking-wider text-center">
         Projects
       </h1>
-      <nav className="menu ">
+      <nav className="menu  ">
         {projects.map((project, index) => (
           <NavLink
             key={index}
             to={`/projects/${project.id}`}
             style={{ zIndex: 12 }}
-            className="menu__item font-[300] my-2  hover:font-[400] "
+            className="menu__item font-[300] py-6  border-y border-[#3e3e3e]  hover:border-[#4e4e4e] mx-auto max-w-[88rem] w-screen hover:font-[400] "
             data-img={`img/${index + 1}.jpg`}
             onMouseEnter={() =>
               project.image && handleMouseEnter(project.image)
@@ -53,7 +54,7 @@ const Projects = () => {
             <span className="menu__item-text   ">
               <span className="menu__item-textinner">{project.name}</span>
             </span>
-            <span className="menu__item-sub">{project.name}</span>
+            <span className="menu__item-sub">{project.releaseYear}</span>
           </NavLink>
         ))}
       </nav>
@@ -63,8 +64,8 @@ const Projects = () => {
           alt="hovered"
           style={{
             position: "fixed",
-            left: `${mousePosition.x - imageSize.width / 2}px`, // Center horizontally
-            top: `${mousePosition.y - imageSize.height / 2}px`, // Center vertically
+            left: `${mousePosition.x - imageSize.width / 2}px`,
+            top: `${mousePosition.y - imageSize.height / 2}px`,
             pointerEvents: "none",
             zIndex: 11,
           }}

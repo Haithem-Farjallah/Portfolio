@@ -13,6 +13,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       document.documentElement.classList.remove("dark");
     }
     localStorage.setItem("theme", theme);
+    window.dispatchEvent(new Event("storage"));
   }, [theme]);
 
   const toggleTheme = () => {
