@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { educations } from "../data/Education";
-import demo from "../../assets/demo.png";
-import gsap from "gsap";
+
 import { IoLocationOutline } from "react-icons/io5";
 
 const Education: React.FC = () => {
@@ -49,6 +48,9 @@ const Education: React.FC = () => {
                   {experience.date}
                 </p>
               </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                {experience.university}
+              </p>
               <div className="flex items-center gap-1">
                 <IoLocationOutline />
 

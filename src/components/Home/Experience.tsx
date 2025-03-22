@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { experiences } from "../data/Experience";
 import type { Experience } from "../data/Experience";
 import {
@@ -7,7 +7,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { VscDebugBreakpointLog } from "react-icons/vsc";
-import { FaCalendarAlt, FaClock, FaGithub } from "react-icons/fa";
+import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
 import { techIcons } from "../data/TechIcons";

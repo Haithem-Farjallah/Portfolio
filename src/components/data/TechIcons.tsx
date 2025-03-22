@@ -1,4 +1,4 @@
-import { FaCalendarAlt, FaClock, FaGithub, FaNodeJs } from "react-icons/fa";
+import { FaGithub, FaNodeJs } from "react-icons/fa";
 
 import {
   SiAngular,

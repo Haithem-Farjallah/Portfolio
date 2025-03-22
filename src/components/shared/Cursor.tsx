@@ -35,20 +35,20 @@ const Cursor = () => {
     };
 
     // Handle hover effect on links
-    const handleLinkHover = () => {
-      if (cursorDotRef.current && cursorOutlineRef.current) {
-        gsap.to(cursorDotRef.current, {
-          backgroundColor: "orange",
-          scale: 1.1, // increase size
-          duration: 0.3,
-        });
-        gsap.to(cursorOutlineRef.current, {
-          borderColor: "orange",
-          scale: 1.2, // increase size slightly more than cursorDot
-          duration: 0.3,
-        });
-      }
-    };
+    // const handleLinkHover = () => {
+    //   if (cursorDotRef.current && cursorOutlineRef.current) {
+    //     gsap.to(cursorDotRef.current, {
+    //       backgroundColor: "orange",
+    //       scale: 1.1, // increase size
+    //       duration: 0.3,
+    //     });
+    //     gsap.to(cursorOutlineRef.current, {
+    //       borderColor: "orange",
+    //       scale: 1.2, // increase size slightly more than cursorDot
+    //       duration: 0.3,
+    //     });
+    //   }
+    // };
 
     const handleLinkHoverOut = () => {
       if (cursorDotRef.current && cursorOutlineRef.current) {
