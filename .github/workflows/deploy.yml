@@ -1,0 +1,55 @@
+name: Deploy React App to Azure VM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Use the version your app requires
+
+      # Step 3: Inject .env variables and build the React app
+      - name: Build React app
+        run: |
+          echo "Injecting environment variables..."
+          echo "VITE_SERVICE_ID=${{ secrets.VITE_SERVICE_ID }}" > .env
+          echo "VITE_TEMPLATE_ID=${{ secrets.VITE_TEMPLATE_ID }}" >> .env
+          echo "VITE_PUBLIC_KEY=${{ secrets.VITE_PUBLIC_KEY }}" >> .env
+
+          echo "Installing dependencies..."
+          npm install
+
+          echo "Building the React app..."
+          npm run build
+
+      # Step 4: SSH into the VM and deploy the app
+      - name: Deploy to Azure VM
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.AZURE_VM_IP }}
+          username: ${{ secrets.AZURE_VM_USERNAME }}
+          key: ${{ secrets.AZURE_VM_SSH_KEY }}
+          script: |
+            echo "Deploying React app..."
+            cd ~/Portfolio
+
+            # Remove the old build files
+            sudo rm -rf /var/www/html/*
+
+            # Copy the new build files to the NGINX root
+            sudo cp -r build/* /var/www/html/
+
+            # Restart NGINX
+            sudo systemctl restart nginx
