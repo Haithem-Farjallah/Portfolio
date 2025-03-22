@@ -34,7 +34,17 @@ jobs:
           echo "Building the React app..."
           npm run build
 
-      # Step 4: SSH into the VM and deploy the app
+      # Step 4: Copy the build files to the VM
+      - name: Copy build files to VM
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.AZURE_VM_IP }}
+          username: ${{ secrets.AZURE_VM_USERNAME }}
+          key: ${{ secrets.AZURE_VM_SSH_KEY }}
+          source: "dist/*"
+          target: "~/Portfolio/dist/"
+
+      # Step 5: SSH into the VM and deploy the app
       - name: Deploy to Azure VM
         uses: appleboy/ssh-action@v1
         with:
