@@ -36,7 +36,7 @@ jobs:
 
       # Step 4: Copy the build files to the VM
       - name: Copy build files to VM
-        uses: appleboy/scp-action@v0.1.4  # Use a valid version
+        uses: appleboy/scp-action@v0.1.4 # Use a valid version
         with:
           host: ${{ secrets.AZURE_VM_IP }}
           username: ${{ secrets.AZURE_VM_USERNAME }}
