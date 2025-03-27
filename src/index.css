@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 * {
-  cursor: none;
+  cursor: none !important;
   font-family: Epilogue, sans-serif;
 }
 
