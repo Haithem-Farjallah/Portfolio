@@ -22,20 +22,15 @@ export const formFields = [
 export const socials = [
   {
     name: "Github",
-    url: "",
+    url: "https://github.com/Haithem-Farjallah",
   },
   {
     name: "LinkedIn",
-    url: "",
+    url: "https://www.linkedin.com/in/haithem-farjallah-441b002a0/",
   },
   {
     name: "Twitter",
-    url: "",
-  },
-
-  {
-    name: "Slack",
-    url: "",
+    url: "https://x.com/Haithem_2002",
   },
 ];
 

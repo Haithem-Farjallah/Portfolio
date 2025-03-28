@@ -86,7 +86,7 @@ const ContactSection = () => {
                     name={field.name}
                     value={formValues[field.name as keyof FormValues]}
                     maxLength={300}
-                    className="bg-black outline-none ml-5 px-5 py-3 text-2xl text-white placeholder-[#545557] transition-all duration-300 ease-in-out  h-32 resize-none"
+                    className="bg-transparent outline-none ml-5 px-5 py-3 text-2xl text-white placeholder-[#545557] transition-all duration-300 ease-in-out  h-32 resize-none"
                     placeholder={field.placeholder + "*"}
                     onChange={(e) => handleChange(e, field)}
                   />
@@ -96,7 +96,7 @@ const ContactSection = () => {
                     name={field.name}
                     maxLength={30}
                     value={formValues[field.name as keyof FormValues]}
-                    className="bg-black outline-none ml-5 px-5 py-3 text-2xl text-white placeholder-[#545557] transition-all duration-300 ease-in-out"
+                    className="bg-transparent outline-none ml-5 px-5 py-3 text-2xl text-white placeholder-[#545557] transition-all duration-300 ease-in-out"
                     placeholder={field.placeholder + "*"}
                     onChange={(e) => handleChange(e, field)}
                   />
@@ -133,7 +133,7 @@ const ContactSection = () => {
                 key={index}
                 className="flex gap-3 w-fit items-center py-3 hover:underline  duration-300 ease-in-out transform hover:scale-105 "
               >
-                <a href={social.url}>
+                <a href={social.url} target="_blank">
                   <h1 className="text-xl">{social.name}</h1>
                 </a>
                 <FaArrowRight size={14} className=" " />
