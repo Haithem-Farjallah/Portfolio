@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 import gsap from "gsap";
 import { useLocation } from "react-router-dom";
 
@@ -6,6 +6,24 @@ const Cursor = () => {
   const cursorDotRef = useRef<HTMLDivElement>(null);
   const cursorOutlineRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const [theme, setTheme] = useState<string>(
+    localStorage.getItem("theme") || "light"
+  );
+
+  const updateCursorColor = useCallback(() => {
+    const cursorColor = theme === "dark" ? "white" : "black";
+
+    if (cursorDotRef.current && cursorOutlineRef.current) {
+      gsap.to(cursorDotRef.current, {
+        backgroundColor: cursorColor,
+        duration: 0.3,
+      });
+      gsap.to(cursorOutlineRef.current, {
+        borderColor: cursorColor,
+        duration: 0.3,
+      });
+    }
+  }, [theme]);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     const posX = e.clientX;
@@ -48,19 +66,12 @@ const Cursor = () => {
   }, []);
 
   const handleLinkHoverOut = useCallback(() => {
+    updateCursorColor();
     if (cursorDotRef.current && cursorOutlineRef.current) {
-      gsap.to(cursorDotRef.current, {
-        backgroundColor: "white",
-        scale: 1,
-        duration: 0.3,
-      });
-      gsap.to(cursorOutlineRef.current, {
-        borderColor: "white",
-        scale: 1,
-        duration: 0.3,
-      });
+      gsap.to(cursorDotRef.current, { scale: 1, duration: 0.3 });
+      gsap.to(cursorOutlineRef.current, { scale: 1, duration: 0.3 });
     }
-  }, []);
+  }, [updateCursorColor]);
 
   const addHoverListeners = useCallback(() => {
     document.querySelectorAll("a").forEach((link) => {
@@ -82,33 +93,33 @@ const Cursor = () => {
     };
   }, [handleMouseMove, addHoverListeners]);
 
-  // reset router when navigating between routes
   useEffect(() => {
-    if (cursorDotRef.current && cursorOutlineRef.current) {
-      gsap.to(cursorDotRef.current, {
-        backgroundColor: "white",
-        scale: 1,
-        duration: 0.3,
-      });
-      gsap.to(cursorOutlineRef.current, {
-        borderColor: "white",
-        scale: 1,
-        duration: 0.3,
-      });
-    }
-
+    updateCursorColor();
     setTimeout(addHoverListeners, 100);
-  }, [location.pathname, addHoverListeners]);
+  }, [location.pathname, updateCursorColor, addHoverListeners]);
+
+  // Listen for theme changes
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const newTheme = localStorage.getItem("theme") || "light";
+      setTheme(newTheme);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   return (
     <>
       <div
         ref={cursorDotRef}
-        className="cursor-dot w-2 h-2 border-none dark:bg-white bg-black fixed top-0 left-0 rounded-full z-50 pointer-events-none"
+        className="cursor-dot w-2 h-2 border-none fixed top-0 left-0 rounded-full z-50 pointer-events-none"
       ></div>
       <div
         ref={cursorOutlineRef}
-        className="cursor-outline w-9 h-9 border dark:border-white border-black fixed top-0 left-0 rounded-full z-50 pointer-events-none"
+        className="cursor-outline w-9 h-9 border fixed top-0 left-0 rounded-full z-50 pointer-events-none"
       ></div>
     </>
   );
