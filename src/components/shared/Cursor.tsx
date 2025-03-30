@@ -6,9 +6,7 @@ const Cursor = () => {
   const cursorDotRef = useRef<HTMLDivElement>(null);
   const cursorOutlineRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const [theme, setTheme] = useState<string>(
-    localStorage.getItem("theme") || "light"
-  );
+  const [theme, setTheme] = useState<string>("dark");
 
   const updateCursorColor = useCallback(() => {
     const cursorColor = theme === "dark" ? "white" : "black";

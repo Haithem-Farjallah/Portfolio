@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import SingleProject from "../pages/SingleProject";
 import Skills from "../pages/Skills";
+import NotFoundPage from "../components/shared/404";
 
 const AppRoutes = () => {
   const routes = [
@@ -31,6 +32,7 @@ const AppRoutes = () => {
       element: <SingleProject />,
       key: "/projects/:id",
     },
+    { path: "*", element: <NotFoundPage />, key: "You're lost" },
   ];
 
   return (

@@ -4,7 +4,17 @@ import MainLayout from "./layout/MainLayout";
 import AppRoutes from "./routes/AppRoutes";
 import "./App.css";
 import ScrollBar from "./components/shared/ScrollBar";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 const App = () => {
+  const location = useLocation();
+  useEffect(() => {
+    let currentPage = location.pathname.split("/").pop();
+    currentPage =
+      String(currentPage).charAt(0).toUpperCase() +
+      String(currentPage).slice(1);
+    document.title = `${currentPage} | Haithem Farjallah `;
+  }, [location.pathname]);
   return (
     <ScrollBar>
       <ScrollToTop />

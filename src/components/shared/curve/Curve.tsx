@@ -16,14 +16,15 @@ const routes: { [key: string]: string } = {
 function getProjectName() {
   const id = location.pathname.split("/")[2];
   const project = projects.find((p) => p.id == id);
-  return project?.name || " Project";
+  return project?.name || " 404 Not Found";
 }
 
 const getRouteName = (pathname: string): string => {
+  console.log(pathname);
   if (pathname.startsWith("/projects/")) {
     return routes["dynamic"];
   }
-  return routes[pathname] || "Unknown Route";
+  return routes[pathname];
 };
 
 const anim = (variants: any) => {
