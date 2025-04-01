@@ -39,7 +39,9 @@ const SingleProject = () => {
               <h1 className="text-3xl sm:text-4xl font-bold text-center sm:text-left">
                 {project?.name}
               </h1>
-              <div className="text-lg mt-2 sm:mt-0">"2022-2023"</div>
+              <div className="text-lg mt-2 sm:mt-0">
+                {project?.releaseYear}{" "}
+              </div>
             </div>
             <LineSeparator />
           </div>

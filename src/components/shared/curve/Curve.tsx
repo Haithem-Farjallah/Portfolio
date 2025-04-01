@@ -10,22 +10,20 @@ const routes: { [key: string]: string } = {
   "/home": "Home",
   "/skills": "Skills",
   "/contact": "Contact",
-  dynamic: getProjectName(), // will display the project name
 };
 
-function getProjectName() {
-  const id = location.pathname.split("/")[2];
-  const project = projects.find((p) => p.id == id);
-  return project?.name || " 404 Not Found";
-}
-
 const getRouteName = (pathname: string): string => {
-  console.log(pathname);
   if (pathname.startsWith("/projects/")) {
-    return routes["dynamic"];
+    return getProjectName(pathname);
   }
   return routes[pathname];
 };
+
+function getProjectName(pathname: string = ""): string {
+  const id = pathname.split("/")[2];
+  const project = projects.find((p) => p.id == id);
+  return project?.name || " 404 Not Found";
+}
 
 const anim = (variants: any) => {
   return {

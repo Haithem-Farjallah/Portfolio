@@ -9,7 +9,9 @@ import { useLocation } from "react-router-dom";
 const App = () => {
   const location = useLocation();
   useEffect(() => {
-    let currentPage = location.pathname.split("/").pop();
+    let currentPage = location.pathname.startsWith("/projects/")
+      ? "Projects"
+      : location.pathname.split("/").pop() || "Welcome";
     currentPage =
       String(currentPage).charAt(0).toUpperCase() +
       String(currentPage).slice(1);

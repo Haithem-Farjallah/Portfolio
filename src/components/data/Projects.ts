@@ -5,30 +5,21 @@ export interface Project {
   technologies: string[];
   releaseYear?: string;
   link?: string;
-  github: string;
+  github?: string;
   image?: string;
   video?: string; // Added video field
 }
 
-import demo from "../../assets/demo.png";
 import test from "../../assets/test.mp4";
+import bookstore from "../../assets/projects/booktore.png";
+import smartscroll from "../../assets/projects/smartscroll.png";
+import jobFitAI from "../../assets/projects/jobfitAI.png";
+import aws from "../../assets/projects/aws.png";
 
 export const projects: Project[] = [
   {
     id: "1",
-    name: "JobMatch AI",
-    description:
-      "An AI-powered recruitment platform that helps recruiters find the best candidates by analyzing resumes and job requirements. Utilizes the Gemini API to provide intelligent candidate-job matching and improve hiring efficiency.",
-    technologies: ["React", "TypeScript", "CSS", "AI", "Gemini API"],
-    link: "https://example.com",
-    github: "https://github.com/username/jobmatch-ai",
-    image: demo,
-    video: test,
-    releaseYear: "2021",
-  },
-  {
-    id: "2",
-    name: "InstantChat",
+    name: "Consomi Tounsi",
     description:
       "A real-time chat application with a sleek and responsive UI. Built using WebSockets, it enables seamless instant messaging and group chats with a smooth user experience.",
     technologies: ["React", "TypeScript", "CSS", "Socket.IO"],
@@ -40,29 +31,60 @@ export const projects: Project[] = [
     releaseYear: "2020",
   },
   {
-    id: "3",
-    name: "BookHaven",
+    id: "2",
+    name: "JobFit AI",
     description:
-      "An online bookstore where users can browse, purchase, and read digital books. Features include a powerful search engine, book previews, and a smooth shopping experience.",
-    technologies: ["React", "TypeScript", "CSS"],
-    link: "https://example.com",
-    github: "https://github.com/username/bookhaven",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9AX9CwIUgaoF1saxZnGw9CM62tTLvdXEguA&s",
+      "An AI-powered recruitment platform that helps recruiters find the best candidates by analyzing resumes and job requirements. Utilizes the Gemini API to provide intelligent candidate-job matching and improve hiring efficiency.",
+    technologies: [
+      "Angular",
+      "Node js",
+      "Postgresql",
+      "TailwindCSS",
+      "Gemini API",
+    ],
+    github: "https://github.com/Haithem-Farjallah/JobFit-AI",
+    image: jobFitAI,
     video: test,
-    releaseYear: "2019",
+    releaseYear: "2025",
+  },
+
+  {
+    id: "3",
+    name: "Smart Scroll",
+    description:
+      "A Chrome extension that instantly highlights top solutions in GitHub issues, saving developers time by surfacing the best answers based on community upvotes.",
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
+    releaseYear: "2025",
+    github: "https://github.com/Haithem-Farjallah/Smart-Scroll",
+    image: smartscroll,
   },
   {
     id: "4",
     name: "AWS Scalable Architecture",
     description:
       "Designed and deployed a robust three-tier cloud architecture on AWS, featuring EC2 instances, load balancing, a secure database layer, and Docker containerization.",
-    technologies: ["AWS", "Terraform", "Docker", "Nginx"],
-    link: "https://example.com",
-    github: "https://github.com/username/aws-architecture",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s",
+    technologies: ["AWS", "Docker", "Nginx"],
+    // link: "https://example.com",
+    image: aws,
     video: test,
-    releaseYear: "2018",
+    releaseYear: "2025",
+  },
+  {
+    id: "5",
+    name: "Bookstore App",
+    description:
+      "A full-stack e-commerce application for browsing and purchasing books. The app features user authentication, product catalog, shopping cart functionality, and order processing. Built with the MERN stack (MongoDB, Express.js, React.js, Node.js) and Redux Toolkit for state management.",
+    technologies: [
+      "MongoDB",
+      "Express.js",
+      "Node.js",
+      "React.js",
+      "TailwindCSS",
+      "Redux Toolkit",
+    ],
+    releaseYear: "2024",
+    link: "https://book-store-frontend-lake.vercel.app/",
+    github: "https://github.com/Haithem-Farjallah/BookStore",
+    image: bookstore,
   },
 ];

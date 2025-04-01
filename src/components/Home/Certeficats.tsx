@@ -64,14 +64,14 @@ export default function Certeficats() {
       <div className="flex space-x-4">
         <motion.button
           whileTap={{ scale: 0.8 }}
-          className="bg-white rounded-full  h-12 w-12 shadow-md z-10 hover:bg-gray-100 transition-all cursor-none"
+          className=" rounded-full  h-12 w-12 shadow-md z-10 border-2 transition-all cursor-none"
           onClick={() => handleClick(-1)}
         >
           ◀︎
         </motion.button>
         <motion.button
           whileTap={{ scale: 0.8 }}
-          className="bg-white rounded-full  h-12 w-12 shadow-md z-10 hover:bg-gray-100 transition-all cursor-none"
+          className=" rounded-full  h-12 w-12 shadow-md z-10 border-2  transition-all cursor-none"
           onClick={() => handleClick(1)}
         >
           ▶︎

@@ -25,12 +25,12 @@ const Skills: React.FC = () => {
             placeholder="Search..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="border border-[#545557] bg-transparent w-full h-12 rounded-xl px-5 text-lg placeholder:text-[#4e4e4e] text-white transform duration-300 outline-none focus:shadow-md"
+            className="border border-[#545557] bg-transparent w-full h-12 rounded-xl px-5 text-lg placeholder:text-[#4e4e4e] transform duration-300 outline-none focus:shadow-md"
           />
 
           <div className="space-y-12">
             {filteredTechStack.length === 0 ? (
-              <div className="flex flex-col items-center justify-center h-[50vh] gap-5  text-white text-center text-lg ">
+              <div className="flex flex-col items-center justify-center h-[50vh] gap-5   text-center text-lg ">
                 <IoCubeOutline size="66" />
                 <h1 className="text-xl tracking-wider">
                   Could not find anything...
@@ -49,21 +49,20 @@ const Skills: React.FC = () => {
                     {stack.items.map((item, i) => (
                       <div
                         key={i}
-                        className="relative flex items-center px-8 py-5 sm:w-full md:w-1/2 lg:w-[32%] border border-[#1e1e1e] text-white rounded-lg shadow-lg overflow-hidden"
+                        className="relative flex items-center px-8 py-5 sm:w-full md:w-1/2 lg:w-[32%] border border-[#1e1e1e]  rounded-lg shadow-lg overflow-hidden"
                       >
                         <span className="text-xl font-light">{item.name}</span>
 
-                        <div className="absolute right-0 h-24 w-40">
+                        <div className="absolute right-0 h-24 w-40 ">
                           <img
                             src={item.image}
                             alt="Tech Logo"
-                            className="h-full w-full object-cover  "
+                            className="h-full w-full object-cover object-center dark:brightness-75"
                             style={{
                               WebkitMaskImage:
                                 "linear-gradient(to left, black 20%, transparent 100%)",
                               maskImage:
                                 "linear-gradient(to left, black 50%, transparent 100%)",
-                              filter: "brightness(40%)",
                             }}
                           />
                         </div>

@@ -10,52 +10,39 @@ export interface Experience {
   date: string;
   duration: string;
   summary: string;
-  description: string;
   technologies: string[];
 }
 
 export const experiences: Experience[] = [
   {
     image: xsustain,
-    title: "Frontend Engineer (Remote)",
-    company: "TechWave Solutions",
-    location: "New York, USA",
+    title: "Full Stack Developer",
+    company: "Xsustain",
+    location: "Tunis , Tunisia",
     type: "Full-time",
-    date: "Jul 2021 - Present",
-    duration: "1 year",
-    summary:
-      "Developing and maintaining responsive user interfaces using React and Tailwind CSS.",
-    description:
-      "Implementing complex UI interactions and ensuring cross-browser compatibility.",
-    technologies: ["React", "TailwindCSS", "MongoDB"],
-  },
-  {
-    image: xsustain,
-    title: "Software Developer",
-    company: "Wevoz Innovations",
-    location: "Milan, Italy",
-    type: "Full-time",
-    date: "Jun 2020 - Jun 2021",
-    duration: "1 year",
-    summary:
-      "Built and optimized mobile and web applications using React and React Native.",
-    description:
-      "Developed automation scripts for data scraping using Python and Selenium.",
-    technologies: ["React", "Python", "Selenium"],
+    date: "Jun 2024-Aug 2024",
+    duration: "3 months",
+    summary: "Developed a restaurant management application",
+    technologies: [
+      "React",
+      "TailwindCSS",
+      "MongoDB",
+      "NodeJS",
+      "ExpressJS",
+      "Redux",
+    ],
   },
   {
     image: etnafes,
-    title: "Frontend Engineer (Contractor)",
-    company: "FreeBeings",
-    location: "Remote",
-    type: "Contract",
-
-    date: "Mar 2019 - Aug 2020",
+    title: "Full Stack Developer",
+    company: "Etnafes",
+    location: "Kairouan , Tunisia",
+    type: "Full-time",
+    date: "Jun 2023-Aug 2023",
     duration: "1 year",
     summary:
-      "Worked on multiple client projects to deliver responsive and modern web applications.",
-    description:
-      "Occasionally led frontend teams and mentored junior developers on best practices.",
-    technologies: ["React", "JavaScript", "HTML", "CSS"],
+      "Contributed to scaling the company's official website and enhancing its features",
+
+    technologies: ["VueJS", "Bootstrap", "Laravel", "MySQL"],
   },
 ];

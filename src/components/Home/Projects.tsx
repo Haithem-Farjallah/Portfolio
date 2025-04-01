@@ -5,7 +5,8 @@ import { NavLink } from "react-router-dom";
 const Projects = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
+
+  const fixedImageSize = { width: 350, height: 200 };
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -21,12 +22,7 @@ const Projects = () => {
   }, []);
 
   const handleMouseEnter = (imgSrc: string) => {
-    const img = new Image();
-    img.src = imgSrc;
-    img.onload = () => {
-      setImageSize({ width: img.width, height: img.height });
-      setHoveredItem(imgSrc);
-    };
+    setHoveredItem(imgSrc);
   };
 
   const handleMouseLeave = () => {
@@ -59,17 +55,24 @@ const Projects = () => {
         ))}
       </nav>
       {hoveredItem && (
-        <img
-          src={hoveredItem}
-          alt="hovered"
+        <div
           style={{
             position: "fixed",
-            left: `${mousePosition.x - imageSize.width / 2}px`,
-            top: `${mousePosition.y - imageSize.height / 2}px`,
+            left: `${mousePosition.x - fixedImageSize.width / 2}px`,
+            top: `${mousePosition.y - fixedImageSize.height / 2}px`,
+            width: `${fixedImageSize.width}px`,
+            height: `${fixedImageSize.height}px`,
             pointerEvents: "none",
-            zIndex: 11,
+            zIndex: 13,
+            overflow: "hidden",
           }}
-        />
+        >
+          <img
+            src={hoveredItem}
+            className="rounded w-full h-full "
+            alt="hovered"
+          />
+        </div>
       )}
     </main>
   );

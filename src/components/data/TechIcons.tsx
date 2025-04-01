@@ -12,6 +12,9 @@ import {
   SiTailwindcss,
   SiRedux,
   SiVuedotjs,
+  SiMysql,
+  SiBootstrap,
+  SiExpress,
 } from "react-icons/si";
 
 // Technology icon mapping
@@ -23,10 +26,13 @@ export const techIcons: { [key: string]: JSX.Element } = {
   GitHub: <FaGithub className="text-white" />,
   React: <SiReact className="text-blue-500" />,
   NodeJS: <FaNodeJs className="text-green-500" />,
+  ExpressJS: <SiExpress className="text-yellow-400" />,
   MongoDB: <SiMongodb className="text-green-600" />,
   PostgreSQL: <SiPostgresql className="text-blue-500" />,
   Laravel: <SiLaravel className="text-red-600" />,
   VueJS: <SiVuedotjs className="text-green-400" />,
   TailwindCSS: <SiTailwindcss className="text-teal-400" />,
   Redux: <SiRedux className="text-purple-500" />,
+  MySQL: <SiMysql className="text-blue-500" />,
+  Bootstrap: <SiBootstrap className="text-purple-500" />,
 };

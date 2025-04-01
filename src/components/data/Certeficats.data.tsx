@@ -1,36 +1,18 @@
 import { v4 as uuidv4 } from "uuid";
-import demo from "../../assets/demo.png";
+import aws from "../../assets/certificats/aws.jpg";
+import ccna1 from "../../assets/certificats/ccna1.jpg";
+import sql from "../../assets/certificats/sql.jpg";
 export const items = [
   {
     key: uuidv4(),
-    content: <img src={demo} alt="1" />,
+    content: <img src={aws} alt="aws" />,
   },
   {
     key: uuidv4(),
-    content: <img src={demo} alt="2" />,
+    content: <img src={ccna1} alt="2" />,
   },
   {
     key: uuidv4(),
-    content: <img src={demo} alt="3" />,
-  },
-  {
-    key: uuidv4(),
-    content: <img src={demo} alt="4" />,
-  },
-  {
-    key: uuidv4(),
-    content: <img src={demo} alt="5" />,
-  },
-  {
-    key: uuidv4(),
-    content: <img src={demo} alt="6" />,
-  },
-  {
-    key: uuidv4(),
-    content: <img src={demo} alt="7" />,
-  },
-  {
-    key: uuidv4(),
-    content: <img src={demo} alt="8" />,
+    content: <img src={sql} alt="3" />,
   },
 ];
