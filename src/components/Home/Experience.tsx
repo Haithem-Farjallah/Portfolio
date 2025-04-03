@@ -51,10 +51,16 @@ const ExperienceDetails = ({ experience }: { experience: Experience }) => (
 
       <h1 className=" font-medium my-1">{experience.summary}</h1>
 
-      <div className="flex gap-2 space-x-3  text-lg ">
+      <div className="flex gap-2 space-x-3 text-lg">
         {experience.technologies.map((tech, index) => (
-          <div key={index} className="flex items-center ">
+          <div
+            key={index}
+            className="relative flex flex-col items-center group mb-2"
+          >
             {techIcons[tech]}
+            <span className="absolute top-full left-1 mt-2 text-xs  opacity-0 group-hover:opacity-100 transition-opacity">
+              {tech}
+            </span>
           </div>
         ))}
       </div>
