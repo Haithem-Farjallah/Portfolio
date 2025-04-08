@@ -143,10 +143,10 @@ export default function Intro() {
   }, []);
 
   return (
-    <div className=" relative h-screen  md:h-screen flex justify-center items-center overflow-hidden ">
+    <div className=" relative h-screen   md:h-screen flex justify-center items-center overflow-hidden ">
       <div
         ref={content}
-        className="absolute inset-0 m-3 overflow-hidden bg-white/5 border border-gray-900/5 dark:border-none backdrop-blur-md shadow flex justify-center items-center rounded-lg "
+        className="absolute  inset-0 m-3 overflow-hidden bg-white/5 border border-gray-900/5 dark:border-none backdrop-blur-md shadow flex justify-center items-center rounded-lg "
       >
         <div className="absolute w-[650px] h-[650px] bg-pink-600/70 rounded-full blur-[100px] z-10 animate-move-around left-1/4 top-1/2"></div>
         <div className="absolute w-[650px] h-[650px] bg-blue-500/70 rounded-full blur-[100px] z-10 animate-move-around-reverse left-3/4 top-1/2"></div>

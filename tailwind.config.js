@@ -1,7 +1,13 @@
+const flowbiteReact = require("flowbite-react/plugin/tailwindcss");
+
 // tailwind.config.js
 module.exports = {
   darkMode: "class",
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    ".flowbite-react\\class-list.json"
+  ],
   theme: {
     extend: {
       animation: {
@@ -43,5 +49,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [flowbiteReact],
 };
