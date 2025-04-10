@@ -24,7 +24,7 @@ const Pagination: React.FC<PaginationProps> = ({ id }) => {
       {hasPrevious && (
         <NavLink
           to={`/projects/${id - 1}`}
-          className="flex items-center gap-1 text-white/90 px-4 py-2 rounded-lg hover:text-white transition duration-300"
+          className="flex items-center gap-1  px-4 py-2 rounded-lg dark:hover:text-white transition duration-300"
         >
           <FaArrowLeftLong className="h-5" />
           <span className="text-lg ">Prev Project</span>
@@ -33,7 +33,7 @@ const Pagination: React.FC<PaginationProps> = ({ id }) => {
       {hasNext && (
         <NavLink
           to={`/projects/${id + 1}`}
-          className="flex items-center gap-1 text-white/90 px-4 py-2 rounded-lg hover:text-white transition duration-300"
+          className="flex items-center gap-1  px-4 py-2 rounded-lg dark:hover:text-white transition duration-300"
         >
           <FaArrowRightLong className="h-5" />
           <span className="text-lg ">Next Project</span>

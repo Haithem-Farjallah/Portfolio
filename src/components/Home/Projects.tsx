@@ -43,7 +43,7 @@ const Projects = () => {
             className="menu__item font-[300] py-6  border-y border-[#3e3e3e]  hover:border-[#4e4e4e] mx-auto max-w-[88rem] w-screen hover:font-[400] "
             data-img={`img/${index + 1}.jpg`}
             onMouseEnter={() =>
-              project.image && handleMouseEnter(project.image)
+              project.imagePreview && handleMouseEnter(project.imagePreview)
             }
             onMouseLeave={handleMouseLeave}
           >
