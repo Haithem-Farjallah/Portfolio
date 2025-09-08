@@ -1,4 +1,10 @@
-import { useEffect, useRef, useCallback, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useCallback,
+  useState,
+  useLayoutEffect,
+} from "react";
 import gsap from "gsap";
 import { useLocation } from "react-router-dom";
 
@@ -7,8 +13,33 @@ const Cursor = () => {
   const cursorOutlineRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const [theme, setTheme] = useState<string>("dark");
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  // Detect if device is touch-enabled( to remove the cursor on mobile devices)
+  useLayoutEffect(() => {
+    setIsMobile("ontouchstart" in window || navigator.maxTouchPoints > 0);
+
+    // Set cursor to center initially
+    if (cursorDotRef.current && cursorOutlineRef.current) {
+      const centerX = window.innerWidth / 3;
+      const centerY = window.innerHeight / 3;
+
+      const dotOffset = cursorDotRef.current.offsetWidth / 2;
+      const outlineOffset = cursorOutlineRef.current.offsetWidth / 2;
+
+      gsap.set(cursorDotRef.current, {
+        top: centerY - dotOffset,
+        left: centerX - dotOffset,
+      });
+      gsap.set(cursorOutlineRef.current, {
+        top: centerY - outlineOffset,
+        left: centerX - outlineOffset,
+      });
+    }
+  }, []);
 
   const updateCursorColor = useCallback(() => {
+    if (isMobile) return;
     const cursorColor = theme === "dark" ? "white" : "black";
 
     if (cursorDotRef.current && cursorOutlineRef.current) {
@@ -21,34 +52,38 @@ const Cursor = () => {
         duration: 0.3,
       });
     }
-  }, [theme]);
+  }, [theme, isMobile]);
 
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      if (isMobile) return;
+      const posX = e.clientX;
+      const posY = e.clientY;
 
-    if (cursorDotRef.current && cursorOutlineRef.current) {
-      const dotOffset = cursorDotRef.current.offsetWidth / 2;
-      const outlineOffset = cursorOutlineRef.current.offsetWidth / 2;
+      if (cursorDotRef.current && cursorOutlineRef.current) {
+        const dotOffset = cursorDotRef.current.offsetWidth / 2;
+        const outlineOffset = cursorOutlineRef.current.offsetWidth / 2;
 
-      gsap.to(cursorDotRef.current, {
-        duration: 0.3,
-        top: posY - dotOffset,
-        left: posX - dotOffset,
-        ease: "power3.out",
-      });
-
-      gsap.to(cursorOutlineRef.current, {
-        duration: 0.5,
-        delay: 0.05,
-        top: posY - outlineOffset,
-        left: posX - outlineOffset,
-        ease: "power3.out",
-      });
-    }
-  }, []);
+        gsap.to(cursorDotRef.current, {
+          duration: 0.3,
+          top: posY - dotOffset,
+          left: posX - dotOffset,
+          ease: "power3.out",
+        });
+        gsap.to(cursorOutlineRef.current, {
+          duration: 0.5,
+          delay: 0.05,
+          top: posY - outlineOffset,
+          left: posX - outlineOffset,
+          ease: "power3.out",
+        });
+      }
+    },
+    [isMobile]
+  );
 
   const handleLinkHover = useCallback(() => {
+    if (isMobile) return;
     if (cursorDotRef.current && cursorOutlineRef.current) {
       gsap.to(cursorDotRef.current, {
         backgroundColor: "orange",
@@ -61,27 +96,29 @@ const Cursor = () => {
         duration: 0.3,
       });
     }
-  }, []);
+  }, [isMobile]);
 
   const handleLinkHoverOut = useCallback(() => {
+    if (isMobile) return;
     updateCursorColor();
     if (cursorDotRef.current && cursorOutlineRef.current) {
       gsap.to(cursorDotRef.current, { scale: 1, duration: 0.3 });
       gsap.to(cursorOutlineRef.current, { scale: 1, duration: 0.3 });
     }
-  }, [updateCursorColor]);
+  }, [updateCursorColor, isMobile]);
 
   const addHoverListeners = useCallback(() => {
+    if (isMobile) return;
     document.querySelectorAll("a").forEach((link) => {
       link.addEventListener("mouseenter", handleLinkHover);
       link.addEventListener("mouseleave", handleLinkHoverOut);
     });
-  }, [handleLinkHover, handleLinkHoverOut]);
+  }, [handleLinkHover, handleLinkHoverOut, isMobile]);
 
   useEffect(() => {
+    if (isMobile) return;
     window.addEventListener("mousemove", handleMouseMove);
     addHoverListeners();
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       document.querySelectorAll("a").forEach((link) => {
@@ -89,36 +126,34 @@ const Cursor = () => {
         link.removeEventListener("mouseleave", handleLinkHoverOut);
       });
     };
-  }, [handleMouseMove, addHoverListeners]);
+  }, [handleMouseMove, addHoverListeners, isMobile]);
 
   useEffect(() => {
     updateCursorColor();
-    setTimeout(addHoverListeners, 100);
-  }, [location.pathname, updateCursorColor, addHoverListeners]);
+    if (!isMobile) setTimeout(addHoverListeners, 100);
+  }, [location.pathname, updateCursorColor, addHoverListeners, isMobile]);
 
-  // Listen for theme changes
   useEffect(() => {
     const handleStorageChange = () => {
       const newTheme = localStorage.getItem("theme") || "light";
       setTheme(newTheme);
     };
-
     window.addEventListener("storage", handleStorageChange);
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-    };
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
+
+  if (isMobile) return null;
 
   return (
     <>
       <div
         ref={cursorDotRef}
         className="cursor-dot w-2 h-2 border-none fixed top-0 left-0 rounded-full z-50 pointer-events-none"
-      ></div>
+      />
       <div
         ref={cursorOutlineRef}
         className="cursor-outline w-9 h-9 border fixed top-0 left-0 rounded-full z-50 pointer-events-none"
-      ></div>
+      />
     </>
   );
 };

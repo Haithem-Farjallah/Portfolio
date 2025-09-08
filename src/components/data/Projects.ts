@@ -56,13 +56,13 @@ export const projects: Project[] = [
     name: "Consomi Tounsi",
     description:
       "A real-time chat application with a sleek and responsive UI. Built using WebSockets, it enables seamless instant messaging and group chats with a smooth user experience.",
-    technologies: ["React", "TypeScript", "CSS", "Socket.IO"],
-    link: "https://example.com",
-    github: "https://github.com/username/instantchat",
+    technologies: ["Spring Boot", "TypeScript", "CSS", "Socket.IO"],
+    link: "",
+    github: "https://github.com/medkhalilbensmida/Projet-Spring",
     imagePreview: azureImages.consommiTounsi,
     images: [],
-    releaseYear: "2020",
-    isDone: false,
+    releaseYear: "2025",
+    isDone: true,
   },
   {
     id: "2",

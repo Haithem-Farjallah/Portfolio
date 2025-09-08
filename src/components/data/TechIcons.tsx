@@ -15,7 +15,9 @@ import {
   SiMysql,
   SiBootstrap,
   SiExpress,
+  SiSpring,
 } from "react-icons/si";
+import { AiOutlinePython } from "react-icons/ai";
 
 // Technology icon mapping
 export const techIcons: { [key: string]: JSX.Element } = {
@@ -35,4 +37,6 @@ export const techIcons: { [key: string]: JSX.Element } = {
   Redux: <SiRedux className="text-purple-500" />,
   MySQL: <SiMysql className="text-blue-500" />,
   Bootstrap: <SiBootstrap className="text-purple-500" />,
+  SpringBoot: <SiSpring className="text-green-500" />,
+  Python: <AiOutlinePython className="text-yellow-500" />,
 };

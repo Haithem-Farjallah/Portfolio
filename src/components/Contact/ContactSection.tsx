@@ -44,7 +44,6 @@ const ContactSection = () => {
     setErrors(newErrors);
 
     if (isValid) {
-      console.log("Form submitted successfully", formValues);
       sendEmail(formValues);
       setFormValues({
         name: "",

@@ -8,7 +8,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { VscDebugBreakpointLog } from "react-icons/vsc";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
-import { MdWork } from "react-icons/md";
+import { MdBusinessCenter, MdWork } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
 import { techIcons } from "../data/TechIcons";
 
@@ -25,16 +25,16 @@ const ExperienceDetails = ({ experience }: { experience: Experience }) => (
       <h1 className="text-2xl font-semibold ">{experience.title}</h1>
       <div className="flex flex-wrap items-center gap-2 text-sm ">
         <div className="flex items-center gap-1 border-2 dark:border-[#2e2e2e] px-3 py-[2px]  rounded-2xl dark:text-gray-300 text-gray-500  ">
-          <MdWork className="mt-[2px]" />
-          <span>{experience.company}</span>
+          <MdWork />
+          <span className="mt-[2px]">{experience.company}</span>
         </div>
         <div className="flex items-center gap-1 border-2 dark:border-[#2e2e2e] px-3 py-[2px]  rounded-2xl dark:text-gray-300 text-gray-500 ">
-          <IoLocationSharp className="mt-[2px]" />
-          <span>{experience.location}</span>
+          <IoLocationSharp />
+          <span className="mt-[2px]">{experience.location}</span>
         </div>
         <div className="flex items-center gap-1 border-2 dark:border-[#2e2e2e] px-3 py-[2px]  rounded-2xl dark:text-gray-300 text-gray-500 ">
-          <MdWork className="mt-[2px]" />
-          <span>{experience.type}</span>
+          <MdBusinessCenter />
+          <span className="mt-[2px]">{experience.type}</span>
         </div>
       </div>
 
@@ -57,7 +57,7 @@ const ExperienceDetails = ({ experience }: { experience: Experience }) => (
             key={index}
             className="relative flex flex-col items-center group mb-2"
           >
-            {techIcons[tech]}
+            {techIcons[tech.replace(/\s+/g, "")]}
             <span className="absolute top-full left-1 mt-2 text-xs  opacity-0 group-hover:opacity-100 transition-opacity">
               {tech}
             </span>
@@ -75,7 +75,6 @@ const Experience: React.FC = () => {
   useEffect(() => {
     window.addEventListener("storage", () => {
       const theme = localStorage.getItem("theme");
-      console.log(theme);
       if (theme) {
         setTheme(theme);
       }

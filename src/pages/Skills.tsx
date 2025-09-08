@@ -1,9 +1,10 @@
 import React from "react";
 import Curve from "../components/shared/curve/Curve";
-import { techStack } from "../components/data/Skills.ts";
+import { techStackJSX } from "../components/data/TechSkills.tsx";
 import { IoCubeOutline } from "react-icons/io5";
 
 const Skills: React.FC = () => {
+  const techStack = techStackJSX();
   const [search, setSearch] = React.useState<string>("");
 
   const filteredTechStack = techStack
@@ -49,7 +50,7 @@ const Skills: React.FC = () => {
                     {stack.items.map((item, i) => (
                       <div
                         key={i}
-                        className="relative flex items-center px-8 py-5 sm:w-full md:w-1/2 lg:w-[32%] border border-[#1e1e1e]  rounded-lg shadow-lg overflow-hidden"
+                        className="relative flex items-center px-8 py-5 w-full lg:w-[30%] xl:w-[32%] border border-[#1e1e1e]  rounded-lg shadow-lg overflow-hidden"
                       >
                         <span className="text-xl font-light">{item.name}</span>
 

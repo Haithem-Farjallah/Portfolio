@@ -3,7 +3,6 @@ import { FiMoon, FiSun, FiX } from "react-icons/fi";
 import Switch from "react-switch";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
-import Resume from "../../assets/Resume.pdf";
 
 const Navbar = ({
   theme,
@@ -101,9 +100,11 @@ const Navbar = ({
             Contact
           </Link>
           <a
-            href={Resume}
-            download="Haithem_Farjallah.pdf"
+            href={
+              "https://portfoliopics.blob.core.windows.net/images/Haithem_Farjallah.pdf"
+            }
             className="navbar-link"
+            target="_blank"
           >
             <button>Resume</button>
           </a>
@@ -180,9 +181,11 @@ const Navbar = ({
             </li>
             <li>
               <a
-                href={Resume}
-                download="Haithem_Farjallah.pdf"
+                href={
+                  "https://portfoliopics.blob.core.windows.net/images/Haithem_Farjallah.pdf"
+                }
                 className="navbar-link"
+                target="_blank"
               >
                 <button>Resume</button>
               </a>
