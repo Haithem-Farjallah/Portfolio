@@ -41,7 +41,7 @@ export const experiences: Experience[] = [
   {
     image: medianet,
     title: "Software Engineer Intern",
-    company: "Xsustain",
+    company: "Medianet",
     location: "Tunis , Tunisia",
     type: "Full-time",
     date: "Jun 2025-Aug 2025",
