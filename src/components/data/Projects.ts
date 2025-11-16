@@ -20,6 +20,8 @@ const azureImages = {
   aws: "https://portfoliopics.blob.core.windows.net/images/aws.png",
   consommiTounsi:
     "https://portfoliopics.blob.core.windows.net/images/consommiTounsi.png",
+  socialMediaDeployment:
+    "https://portfoliopics.blob.core.windows.net/images/social-media-deployment.png",
 };
 
 /* JobFit Ai images: */
@@ -50,22 +52,15 @@ import bookstore4 from "../../assets/projects/bookstore/4.png";
 import bookstore5 from "../../assets/projects/bookstore/5.png";
 import bookstore6 from "../../assets/projects/bookstore/6.png";
 
+/*social media app deployment  */
+import socialMediaDeployment1 from "../../assets/projects/SM-deployment/1.jpeg";
+import socialMediaDeployment2 from "../../assets/projects/SM-deployment/2.jpeg";
+import socialMediaDeployment3 from "../../assets/projects/SM-deployment/3.jpeg";
+import socialMediaDeployment4 from "../../assets/projects/SM-deployment/4.jpeg";
+
 export const projects: Project[] = [
   {
     id: "1",
-    name: "Consomi Tounsi",
-    description:
-      "A real-time chat application with a sleek and responsive UI. Built using WebSockets, it enables seamless instant messaging and group chats with a smooth user experience.",
-    technologies: ["Spring Boot", "TypeScript", "CSS", "Socket.IO"],
-    link: "",
-    github: "https://github.com/medkhalilbensmida/Projet-Spring",
-    imagePreview: azureImages.consommiTounsi,
-    images: [],
-    releaseYear: "2025",
-    isDone: true,
-  },
-  {
-    id: "2",
     name: "JobFit AI",
     description:
       "An AI-powered recruitment platform that helps recruiters find the best candidates by analyzing resumes and job requirements. Utilizes the Gemini API to provide intelligent candidate-job matching and improve hiring efficiency.",
@@ -82,9 +77,46 @@ export const projects: Project[] = [
     releaseYear: "2025",
     isDone: true,
   },
-
+  {
+    id: "2",
+    name: "Cloud Native Social Media Platform",
+    description:
+      "Developed and deployed a social media platform built with microservices architecture on Azure Kubernetes Service. Implemented automated CI/CD pipelines using Jenkins and ArgoCD for GitOps-based continuous delivery. Complete infrastructure provisioned and managed as code with Terraform across multiple environments.",
+    technologies: [
+      "Spring Boot",
+      "Azure",
+      "Kubernetes (AKS)",
+      "Terraform",
+      "Docker",
+      "Jenkins",
+      "ArgoCD",
+    ],
+    github: "https://github.com/Haithem-Farjallah/social-media-app-deployment",
+    imagePreview: azureImages.socialMediaDeployment,
+    images: [
+      socialMediaDeployment3,
+      socialMediaDeployment4,
+      socialMediaDeployment1,
+      socialMediaDeployment2,
+    ],
+    releaseYear: "2025",
+    isDone: true,
+  },
   {
     id: "3",
+    name: "Consomi Tounsi",
+    description:
+      "A real-time chat application with a sleek and responsive UI. Built using WebSockets, it enables seamless instant messaging and group chats with a smooth user experience.",
+    technologies: ["Spring Boot", "TypeScript", "CSS", "Socket.IO"],
+    link: "",
+    github: "https://github.com/medkhalilbensmida/Projet-Spring",
+    imagePreview: azureImages.consommiTounsi,
+    images: [],
+    releaseYear: "2025",
+    isDone: true,
+  },
+  {
+    id: "4",
     name: "Smart Scroll",
     description:
       "A Chrome extension that instantly highlights top solutions in GitHub issues, saving developers time by surfacing the best answers based on community upvotes.",
@@ -96,7 +128,7 @@ export const projects: Project[] = [
     images: [smartscroll1, smartscroll2, smartscroll3],
   },
   {
-    id: "4",
+    id: "5",
     name: "AWS Scalable Architecture",
     description:
       "Designed and deployed a robust three-tier cloud architecture on AWS, featuring EC2 instances, load balancing, a secure database layer, and Docker containerization.",
@@ -108,7 +140,7 @@ export const projects: Project[] = [
     isDone: true,
   },
   {
-    id: "5",
+    id: "6",
     name: "Bookstore App",
     description:
       "A full-stack e-commerce application for browsing and purchasing books. The app features user authentication, product catalog, shopping cart functionality, and order processing. Built with the MERN stack (MongoDB, Express.js, React.js, Node.js) and Redux Toolkit for state management.",
