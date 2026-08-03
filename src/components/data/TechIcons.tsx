@@ -1,4 +1,4 @@
-import { FaGithub, FaNodeJs } from "react-icons/fa";
+import { FaAws, FaGithub, FaNodeJs } from "react-icons/fa";
 
 import {
   SiAngular,
@@ -18,6 +18,7 @@ import {
   SiSpring,
 } from "react-icons/si";
 import { AiOutlinePython } from "react-icons/ai";
+import { FaGit, FaJs } from "react-icons/fa6";
 
 // Technology icon mapping
 export const techIcons: { [key: string]: JSX.Element } = {
@@ -25,6 +26,8 @@ export const techIcons: { [key: string]: JSX.Element } = {
   Docker: <SiDocker className="text-blue-500" />,
   HTML5: <SiHtml5 className="text-orange-500" />,
   CSS3: <SiCss3 className="text-blue-400" />,
+  JavaScript:<FaJs className="text-yellow-500"/>,
+  Git:<FaGit className="text-red-500"/>,
   GitHub: <FaGithub className="text-white" />,
   React: <SiReact className="text-blue-500" />,
   NodeJS: <FaNodeJs className="text-green-500" />,
@@ -39,4 +42,5 @@ export const techIcons: { [key: string]: JSX.Element } = {
   Bootstrap: <SiBootstrap className="text-purple-500" />,
   SpringBoot: <SiSpring className="text-green-500" />,
   Python: <AiOutlinePython className="text-yellow-500" />,
+  AWS:<FaAws className="text-yellow-500"/>
 };

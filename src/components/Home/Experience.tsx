@@ -22,7 +22,10 @@ const ExperienceDetails = ({ experience }: { experience: Experience }) => (
       />
     </div>
     <div className=" flex flex-col gap-5 ">
-      <h1 className="text-2xl font-semibold ">{experience.title}</h1>
+        <h1
+          className="text-2xl font-semibold"
+          dangerouslySetInnerHTML={{ __html: experience.title }}
+        />
       <div className="flex flex-wrap items-center gap-2 text-sm ">
         <div className="flex items-center gap-1 border-2 dark:border-[#2e2e2e] px-3 py-[2px]  rounded-2xl dark:text-gray-300 text-gray-500  ">
           <MdWork />

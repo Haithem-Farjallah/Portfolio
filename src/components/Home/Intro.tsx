@@ -163,6 +163,7 @@ export default function Intro() {
           <div className="connect flex items-center mt-5 text-[#1c1d20] dark:text-white">
             <FaArrowRightLong className="h-4" />
             <p
+             data-cursor-hover
               className="font-medium md:text-lg underline underline-offset-8 py-8 p-2 mb-1 cursor-pointer"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}

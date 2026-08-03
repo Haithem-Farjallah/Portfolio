@@ -108,8 +108,9 @@ const Cursor = () => {
   }, [updateCursorColor, isMobile]);
 
   const addHoverListeners = useCallback(() => {
+    const HOVER_SELECTOR = "a, [data-cursor-hover]";
     if (isMobile) return;
-    document.querySelectorAll("a").forEach((link) => {
+    document.querySelectorAll(HOVER_SELECTOR).forEach((link) => {
       link.addEventListener("mouseenter", handleLinkHover);
       link.addEventListener("mouseleave", handleLinkHoverOut);
     });

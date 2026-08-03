@@ -2,6 +2,7 @@ import xsustain from "../../assets/experience/xsustain.jpg";
 import etnafes from "../../assets/experience/etnafes.jpg";
 import medianet from "../../assets/experience/medianet.png";
 import dipawer from "../../assets/experience/dipawer.jpeg";
+import AltaViaApplication from "../../assets/experience/alta-via-logo.png";
 
 export interface Experience {
   image: string;
@@ -27,15 +28,27 @@ const calculateDuration = (startDate: string): number => {
 
 export const experiences: Experience[] = [
   {
+    image: AltaViaApplication,
+    title: "Software Engineer Intern",
+    company: "Alta Via Applications",
+    location: "Berlin , Germany",
+    type: "Full-time",
+    date: "Apr 2026 - Present",
+    duration: `${calculateDuration("2026-04-01")} months`,
+    summary:
+      "Working on data synchronisation between NetSuite and DATEV, the German accounting and tax platform",
+    technologies: ["JavaScript", "React", "Git", "AWS" ],
+  },
+  {
     image: dipawer,
-    title: "Full-stack Developer",
+    title: "Full Stack Developer <br/> (Part-time)",
     company: "Dipawer",
     location: "Tunis , Tunisia",
     type: "Full-time",
-    date: "Jun 2025-Present",
-    duration: `${calculateDuration("2025-06-01")} months`,
+    date: "Aug 2025-Mar 2026",
+    duration: "8 months",
     summary:
-      "Working on Velp, a digital platform for the pet industry that serves both pet owners and professionals",
+      "Worked on Velp, a digital platform for the pet industry that serves both pet owners and professionals",
     technologies: ["Angular", "TailwindCSS", "Spring Boot", "MongoDB"],
   },
   {
@@ -44,7 +57,7 @@ export const experiences: Experience[] = [
     company: "Medianet",
     location: "Tunis , Tunisia",
     type: "Full-time",
-    date: "Jun 2025-Aug 2025",
+    date: "Jun 2025 - Aug 2025",
     duration: "3 months",
     summary:
       "Developed a machine learning model to detect spam emails and generate daily report ",
@@ -56,7 +69,7 @@ export const experiences: Experience[] = [
     company: "Xsustain",
     location: "Tunis , Tunisia",
     type: "Full-time",
-    date: "Jun 2024-Aug 2024",
+    date: "Jun 2024 - Aug 2024",
     duration: "3 months",
     summary: "Developed a restaurant management application",
     technologies: [
@@ -74,7 +87,7 @@ export const experiences: Experience[] = [
     company: "Etnafes",
     location: "Kairouan , Tunisia",
     type: "Full-time",
-    date: "Jun 2023-Aug 2023",
+    date: "Jun 2023 - Aug 2023",
     duration: "3 months",
     summary:
       "Contributed to scaling the company's official website and enhancing its features",

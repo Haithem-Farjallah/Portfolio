@@ -6,7 +6,6 @@ import php from "../../assets/skills/php.png";
 import angular from "../../assets/skills/angular.png";
 import laravel from "../../assets/skills/Laravel.png";
 import springboot from "../../assets/skills/springBoot.png";
-import pandas from "../../assets/skills/pandas.png";
 import tensorflow from "../../assets/skills/tensorflow.png";
 import azure from "../../assets/skills/azure.png";
 import terraform from "../../assets/skills/terraform.png";
@@ -31,6 +30,9 @@ import mySQL from "../../assets/skills/mysql.png";
 import mongodb from "../../assets/skills/mongodb.png";
 import redux from "../../assets/skills/redux.png";
 import githubDark from "../../assets/skills/github-dark.png";
+import git from "../../assets/skills/git.png";
+import gitlab from "../../assets/skills/gitlab.png";
+
 import { useEffect, useState } from "react";
 
 export const techStackJSX = () => {
@@ -51,10 +53,10 @@ export const techStackJSX = () => {
     {
       category: "Programming Languages",
       items: [
-        { name: "Python", image: python },
-        { name: "JavaScript", image: javascript },
-        { name: "TypeScript", image: typescript },
         { name: "Java", image: java },
+        { name: "TypeScript", image: typescript },
+        { name: "JavaScript", image: javascript },
+        { name: "Python", image: python },
         { name: "C", image: c },
         { name: "C++", image: cpp },
         { name: "PHP", image: php },
@@ -75,8 +77,6 @@ export const techStackJSX = () => {
       items: [
         { name: "ReactJS", image: react },
         { name: "Redux", image: redux },
-        { name: "NumPy", image: python },
-        { name: "Pandas", image: pandas },
         { name: "TensorFlow", image: tensorflow },
       ],
     },
@@ -111,11 +111,17 @@ export const techStackJSX = () => {
     {
       category: "Dev Tools",
       items: [
-        { name: "Postman", image: postman },
-        {
-          name: "GitHub",
-          image: theme === "dark" ? githubDark : github,
-        },
+      {
+        name:"Git", image:git
+      },
+      {
+        name: "GitHub",
+        image: theme === "dark" ? githubDark : github,
+      },
+      {
+        name:"GitLab", image:gitlab
+      },
+      { name: "Postman", image: postman },
       ],
     },
     {
