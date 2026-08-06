@@ -11,25 +11,13 @@ export interface Project {
   isDone: boolean;
 }
 
-/*Preview Images  */
-const azureImages = {
-  bookstore: "https://portfoliopics.blob.core.windows.net/images/bookstore.png",
-  smartscroll:
-    "https://portfoliopics.blob.core.windows.net/images/smartscroll.png",
-  jobFitAI: "https://portfoliopics.blob.core.windows.net/images/jobfitAI.png",
-  aws: "https://portfoliopics.blob.core.windows.net/images/aws.png",
-  consommiTounsi:
-    "https://portfoliopics.blob.core.windows.net/images/consommiTounsi.png",
-  socialMediaDeployment:
-    "https://portfoliopics.blob.core.windows.net/images/social-media-deployment.png",
-};
-
 /* JobFit Ai images: */
 import jobFitAI1 from "../../assets/projects/jobFit AI/1.png";
 import jobFitAI2 from "../../assets/projects/jobFit AI/2.png";
 import jobFitAI3 from "../../assets/projects/jobFit AI/3.png";
 import jobFitAI4 from "../../assets/projects/jobFit AI/4.png";
 import jobFitAI5 from "../../assets/projects/jobFit AI/5.png";
+
 
 /*Smart scroll images :  */
 
@@ -58,6 +46,23 @@ import socialMediaDeployment2 from "../../assets/projects/SM-deployment/2.jpeg";
 import socialMediaDeployment3 from "../../assets/projects/SM-deployment/3.jpeg";
 import socialMediaDeployment4 from "../../assets/projects/SM-deployment/4.jpeg";
 
+import jobFitBanner from "../../assets/projects/jobFit AI/banner.png"
+import smartscrollBanner from "../../assets/projects/smart scroll/banner.png"
+import awsBanner from "../../assets/projects/awsProject/banner.png"
+import bookstoreBanner from "../../assets/projects/bookstore/banner.png"
+
+const projectBanners = {
+  bookstore: bookstoreBanner,
+  smartscroll:smartscrollBanner,
+  jobFitAI: jobFitBanner,
+  aws: awsBanner,
+  consommiTounsi:
+    "https://portfoliopics.blob.core.windows.net/images/consommiTounsi.png",
+  socialMediaDeployment:
+    "https://portfoliopics.blob.core.windows.net/images/social-media-deployment.png",
+};
+
+
 export const projects: Project[] = [
   {
     id: "1",
@@ -72,7 +77,7 @@ export const projects: Project[] = [
       "Gemini API",
     ],
     github: "https://github.com/Haithem-Farjallah/JobFit-AI",
-    imagePreview: azureImages.jobFitAI,
+    imagePreview: projectBanners.jobFitAI,
     images: [jobFitAI1, jobFitAI2, jobFitAI3, jobFitAI4, jobFitAI5],
     releaseYear: "2025",
     isDone: true,
@@ -92,7 +97,7 @@ export const projects: Project[] = [
       "ArgoCD",
     ],
     github: "https://github.com/Haithem-Farjallah/social-media-app-deployment",
-    imagePreview: azureImages.socialMediaDeployment,
+    imagePreview: projectBanners.socialMediaDeployment,
     images: [
       socialMediaDeployment3,
       socialMediaDeployment4,
@@ -110,7 +115,7 @@ export const projects: Project[] = [
     technologies: ["Spring Boot", "TypeScript", "CSS", "Socket.IO"],
     link: "",
     github: "https://github.com/medkhalilbensmida/Projet-Spring",
-    imagePreview: azureImages.consommiTounsi,
+    imagePreview: projectBanners.consommiTounsi,
     images: [],
     releaseYear: "2025",
     isDone: true,
@@ -123,7 +128,7 @@ export const projects: Project[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     releaseYear: "2025",
     github: "https://github.com/Haithem-Farjallah/Smart-Scroll",
-    imagePreview: azureImages.smartscroll,
+    imagePreview: projectBanners.smartscroll,
     isDone: true,
     images: [smartscroll1, smartscroll2, smartscroll3],
   },
@@ -134,7 +139,7 @@ export const projects: Project[] = [
       "Designed and deployed a robust three-tier cloud architecture on AWS, featuring EC2 instances, load balancing, a secure database layer, and Docker containerization.",
     technologies: ["AWS", "Docker", "Nginx"],
     // link: "https://example.com",
-    imagePreview: azureImages.aws,
+    imagePreview: projectBanners.aws,
     images: [aws1, aws2, aws3, aws4, aws5],
     releaseYear: "2025",
     isDone: true,
@@ -155,7 +160,7 @@ export const projects: Project[] = [
     releaseYear: "2024",
     link: "https://book-store-frontend-lake.vercel.app/",
     github: "https://github.com/Haithem-Farjallah/BookStore",
-    imagePreview: azureImages.bookstore,
+    imagePreview: projectBanners.bookstore,
     isDone: true,
     images: [
       bookstore1,

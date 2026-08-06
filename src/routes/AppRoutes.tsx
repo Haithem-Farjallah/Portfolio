@@ -1,7 +1,7 @@
 import Contact from "../pages/Contact";
 import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
-import SingleProject from "../pages/SingleProject";
+import SingleProject from "../pages/ProjectDetails";
 import Skills from "../pages/Skills";
 import NotFoundPage from "../components/shared/404";
 

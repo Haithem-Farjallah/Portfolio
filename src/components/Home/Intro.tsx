@@ -19,7 +19,7 @@ export default function Intro() {
   }, []);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("haithemfarjallah2002@gmail.com");
+    navigator.clipboard.writeText("haithem.farjallah.software@gmail.com");
 
     gsap.to(".connect>p", {
       y: -10,
@@ -27,7 +27,7 @@ export default function Intro() {
       duration: 0.3,
       ease: "power1.in",
       onComplete: () => {
-        setButtonText("Email copied!");
+        setButtonText("Email copied !");
         gsap.fromTo(
           ".connect>p",
           {

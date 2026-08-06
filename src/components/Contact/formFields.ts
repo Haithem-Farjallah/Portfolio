@@ -29,8 +29,8 @@ export const socials = [
     url: "https://www.linkedin.com/in/haithem-farjallah-441b002a0/",
   },
   {
-    name: "Twitter",
-    url: "https://x.com/Haithem_2002",
+    name: "whatsApp",
+    url: "https://wa.me/21627603007",
   },
 ];
 

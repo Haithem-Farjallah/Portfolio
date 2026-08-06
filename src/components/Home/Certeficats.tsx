@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 import { items } from "../data/Certeficats.data";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 interface VariantsProps {
   direction: number;
   position: () => string;
@@ -61,20 +62,22 @@ export default function Certeficats() {
           })}
         </AnimatePresence>
       </div>
-      <div className="flex space-x-4">
+     <div className="flex space-x-4">
         <motion.button
           whileTap={{ scale: 0.8 }}
-          className=" rounded-full  h-12 w-12 shadow-md z-10 border-2 transition-all cursor-none"
+          aria-label="Previous certificate"
+          className="z-10 flex h-12 w-12 cursor-none items-center justify-center rounded-full border border-black/15 text-[#545557] transition-colors duration-300 hover:border-black/40 hover:text-black dark:border-white/15 dark:hover:border-white/40 dark:hover:text-white"
           onClick={() => handleClick(-1)}
         >
-          ◀︎
+          <FiChevronLeft size={20} />
         </motion.button>
         <motion.button
           whileTap={{ scale: 0.8 }}
-          className=" rounded-full  h-12 w-12 shadow-md z-10 border-2  transition-all cursor-none"
+          aria-label="Next certificate"
+          className="z-10 flex h-12 w-12 cursor-none items-center justify-center rounded-full border border-black/15 text-[#545557] transition-colors duration-300 hover:border-black/40 hover:text-black dark:border-white/15 dark:hover:border-white/40 dark:hover:text-white"
           onClick={() => handleClick(1)}
         >
-          ▶︎
+          <FiChevronRight  size={20} />
         </motion.button>
       </div>
     </div>
