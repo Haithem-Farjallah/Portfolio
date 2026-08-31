@@ -3,6 +3,7 @@ import { projects } from "../data/Projects";
 import { NavLink } from "react-router-dom";
 import { FiArrowUpRight } from "react-icons/fi";
 import { motion, useReducedMotion } from "framer-motion";
+import SectionTitle from "../shared/SectionTitle";
 
 const Projects = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -76,16 +77,8 @@ const Projects = () => {
         };
 
   return (
-    <main className="mt-40">
-      <motion.div
-        initial={reduceMotion ? undefined : { opacity: 0, y: 20 }}
-        whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto mb-16 flex flex-col items-center gap-4 px-6"
-      >
-        <h1 className="text-5xl tracking-tight sm:text-6xl">Projects</h1>
-      </motion.div>
+    <main className="mt-24 sm:mt-32 lg:mt-40">
+      <SectionTitle>Projects</SectionTitle>
 
       <nav className="menu">
         {projects.map((project, index) => (

@@ -147,8 +147,8 @@ export default function Intro() {
         className="absolute inset-0 m-3 overflow-hidden bg-white/5 border border-gray-900/5 dark:border-none backdrop-blur-md shadow flex justify-center items-center rounded-lg"
       >
         {/* Background blur elements */}
-        <div className="absolute w-[650px] h-[650px] bg-pink-600/70 rounded-full blur-[100px] z-10 animate-move-around left-1/4 top-1/2"></div>
-        <div className="absolute w-[650px] h-[650px] bg-blue-500/70 rounded-full blur-[100px] z-10 animate-move-around-reverse left-3/4 top-1/2"></div>
+         <div className="absolute w-[650px] h-[650px] bg-pink-600/70 rounded-full blur-[120px] animate-move-around left-1/4 top-1/2"></div>
+      <div className="absolute w-[650px] h-[650px] bg-blue-500/70 rounded-full blur-[120px] animate-move-around-reverse left-3/4 top-1/2"></div>
 
         <div className="relative z-20 mx-auto max-w-xl md:max-w-4xl p-6">
           <p className="text-[#1c1d20] dark:text-white md:text-3xl font-sans">

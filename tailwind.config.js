@@ -19,31 +19,31 @@ module.exports = {
         "move-around": {
           "0%": { transform: "translate(-50%, -50%)" },
           "25%": {
-            transform: "translate(calc(-50% + 800px), calc(-50% - 200px))",
+            transform: "translate(calc(-50% + 32vw), calc(-50% - 14vh))",
           },
           "50%": {
-            transform: "translate(calc(-50% - 300px), calc(-50% + 50px))",
+            transform: "translate(calc(-50% - 14vw), calc(-50% + 6vh))",
           },
           "75%": {
-            transform: "translate(calc(-50% + 800px), calc(-50% + 200px))",
+            transform: "translate(calc(-50% + 32vw), calc(-50% + 14vh))",
           },
           "100%": {
-            transform: "translate(calc(-50% - 300px), calc(-50% - 50px))",
+            transform: "translate(calc(-50% - 14vw), calc(-50% - 6vh))",
           },
         },
         "move-around-mirror": {
           "0%": { transform: "translate(-50%, -50%)" },
           "25%": {
-            transform: "translate(calc(-50% - 800px), calc(-50% - 200px))",
+            transform: "translate(calc(-50% - 32vw), calc(-50% - 14vh))",
           },
           "50%": {
-            transform: "translate(calc(-50% + 300px), calc(-50% + 50px))",
+            transform: "translate(calc(-50% + 14vw), calc(-50% + 6vh))",
           },
           "75%": {
-            transform: "translate(calc(-50% - 800px), calc(-50% + 200px))",
+            transform: "translate(calc(-50% - 32vw), calc(-50% + 14vh))",
           },
           "100%": {
-            transform: "translate(calc(-50% + 300px), calc(-50% - 50px))",
+            transform: "translate(calc(-50% + 14vw), calc(-50% - 6vh))",
           },
         },
       },

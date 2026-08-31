@@ -11,6 +11,7 @@ import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import { MdBusinessCenter, MdWork } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
 import { techIcons } from "../data/TechIcons";
+import SectionTitle from "../shared/SectionTitle";
 
 const ExperienceDetails = ({ experience }: { experience: Experience }) => (
   <div className="  flex  flex-col md:flex-row gap-2  space-x-3">
@@ -84,10 +85,8 @@ const Experience: React.FC = () => {
     });
   }, []);
   return (
-    <div className="container  mx-auto p-5  block">
-      <h1 className="mb-20 text-5xl font-bold uppercase tracking-wider text-center">
-        Experience
-      </h1>
+    <div className="container mx-auto mt-24 p-5 block sm:mt-32 lg:mt-40">
+      <SectionTitle>Experience</SectionTitle>
       <VerticalTimeline animate={true}>
         {experiences.map((experience: Experience, index: number) => (
           <VerticalTimelineElement

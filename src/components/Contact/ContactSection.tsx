@@ -71,12 +71,12 @@ const ContactSection = () => {
                   index === formFields.length - 1 && "border-b"
                 }`}
               >
-                <div className="text-xl relative">
-                  <span className="text-[#545557] font-medium text-sm top-[0.5px] absolute transition-all duration-300">
+                <div className="text-xl xl:relative">
+                  <span className="block xl:absolute text-[#545557] font-medium text-sm mb-2 xl:mb-0 xl:top-[0.5px] transition-all duration-300">
                     {field.id}
                   </span>
                   <span
-                    className={`ml-5 px-5 font-medium text-2xl transition-all duration-300 ease-in-out transform ${
+                    className={`xl:ml-5 xl:px-5 font-medium text-2xl transition-all duration-300 ease-in-out transform ${
                       formValues[field.name as keyof FormValues] &&
                       "text-[#545557] scale-95"
                     }`}
@@ -89,7 +89,7 @@ const ContactSection = () => {
                     name={field.name}
                     value={formValues[field.name as keyof FormValues]}
                     maxLength={300}
-                    className="bg-transparent outline-none ml-5 px-5 py-3 text-2xl text-white placeholder-[#545557] transition-all duration-300 ease-in-out h-32 resize-none"
+                    className="bg-transparent outline-none xl:ml-5 xl:px-5 py-3 text-2xl text-white placeholder-[#545557] transition-all duration-300 ease-in-out h-32 resize-none"
                     placeholder={field.placeholder + "*"}
                     onChange={(e) => handleChange(e, field)}
                   />
@@ -99,7 +99,7 @@ const ContactSection = () => {
                     name={field.name}
                     maxLength={30}
                     value={formValues[field.name as keyof FormValues]}
-                    className="bg-transparent outline-none ml-5 px-5 py-3 text-2xl text-white placeholder-[#545557] transition-all duration-300 ease-in-out"
+                    className="bg-transparent outline-none xl:ml-5 xl:px-5 py-3 text-2xl text-white placeholder-[#545557] transition-all duration-300 ease-in-out"
                     placeholder={field.placeholder + "*"}
                     onChange={(e) => handleChange(e, field)}
                   />
@@ -107,7 +107,7 @@ const ContactSection = () => {
 
                 {errors[field.name as keyof FormValues] && (
                   <motion.span
-                    className="text-red-500 text-sm mt-2 ml-5"
+                    className="text-red-500 text-sm mt-2 xl:ml-5"
                     initial={{ x: 0 }}
                     animate={{
                       x: [0, -10, 10, -10, 10, 0],

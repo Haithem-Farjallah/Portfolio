@@ -149,11 +149,11 @@ const Cursor = () => {
     <>
       <div
         ref={cursorDotRef}
-        className="cursor-dot w-2 h-2 border-none fixed top-0 left-0 rounded-full z-50 pointer-events-none"
+        className="cursor-dot w-2 h-2 border-none fixed top-0 left-0 rounded-full z-[100] pointer-events-none"
       />
       <div
         ref={cursorOutlineRef}
-        className="cursor-outline w-9 h-9 border fixed top-0 left-0 rounded-full z-50 pointer-events-none"
+        className="cursor-outline w-9 h-9 border fixed top-0 left-0 rounded-full z-[100] pointer-events-none"
       />
     </>
   );

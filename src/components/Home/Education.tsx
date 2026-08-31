@@ -2,15 +2,14 @@ import React from "react";
 import { educations } from "../data/Education";
 import { IoLocationOutline } from "react-icons/io5";
 import { motion, useReducedMotion } from "framer-motion";
+import SectionTitle from "../shared/SectionTitle";
 
 const Education: React.FC = () => {
   const reduceMotion = useReducedMotion();
 
   return (
-    <div className="container mx-auto mb-32 px-6">
-      <h1 className="my-20 text-center text-5xl tracking-tight sm:text-6xl">
-        Education
-      </h1>
+    <div className="container mx-auto mt-24 mb-20 px-6 sm:mt-32 sm:mb-28 lg:mt-40 lg:mb-32">
+      <SectionTitle>Education</SectionTitle>
 
       <div className="mx-auto flex max-w-5xl flex-col gap-5">
         {educations.map((education, index) => (
@@ -24,7 +23,7 @@ const Education: React.FC = () => {
               delay: reduceMotion ? 0 : Math.min(index * 0.08, 0.3),
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="education group flex flex-col gap-6 rounded-2xl border border-black/10 p-6 transition-colors duration-300 hover:border-black/25 hover:bg-black/[0.02] dark:border-white/10 dark:hover:border-white/25 dark:hover:bg-white/[0.03] sm:flex-row sm:items-start sm:p-8"
+            className="education group flex flex-col items-center gap-6 rounded-2xl border border-black/10 p-6 text-center transition-colors duration-300 hover:border-black/25 hover:bg-black/[0.02] dark:border-white/10 dark:hover:border-white/25 dark:hover:bg-white/[0.03] sm:flex-row sm:items-start sm:p-8 sm:text-left"
           >
             <div className="h-24 w-32 shrink-0 overflow-hidden rounded-xl border border-black/10 bg-white dark:border-white/10">
               <img
@@ -34,8 +33,8 @@ const Education: React.FC = () => {
               />
             </div>
 
-            <div className="min-w-0 flex-1 space-y-3">
-              <div className="flex flex-wrap items-center gap-3">
+            <div className="flex min-w-0 flex-1 flex-col items-center space-y-3 sm:items-start">
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
                 <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#545557]">
                   {education.date}
                 </p>
@@ -66,11 +65,11 @@ const Education: React.FC = () => {
               )}
 
               {!!education.coursework?.length && (
-                <div className="pt-2">
+                <div className="w-full pt-2">
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#545557]">
                     Coursework
                   </p>
-                  <div className="mt-3 flex flex-wrap gap-2">
+                  <div className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
                     {education.coursework.map((subject) => (
                       <span
                         key={subject}

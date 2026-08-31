@@ -17,6 +17,7 @@ const Home: React.FC = () => {
           infinite: true,
           duration: 1.2,
           smoothWheel: true,
+          syncTouch: true,
         }}
       >
         <Intro />
