@@ -2,7 +2,7 @@ import xsustain from "../../assets/experience/xsustain.jpg";
 import etnafes from "../../assets/experience/etnafes.jpg";
 import medianet from "../../assets/experience/medianet.png";
 import dipawer from "../../assets/experience/dipawer.jpeg";
-import AltaViaApplication from "../../assets/experience/alta-via-logo.png";
+import AltaViaApplication from "../../assets/experience/alta-via-logo.jpeg";
 
 export interface Experience {
   image: string;
@@ -16,36 +16,37 @@ export interface Experience {
   technologies: string[];
 }
 
-const calculateDuration = (startDate: string): number => {
-  const start = new Date(startDate);
-  const now = new Date();
-  const months =
-    (now.getFullYear() - start.getFullYear()) * 12 +
-    (now.getMonth() - start.getMonth()) +
-    1;
-  return months <= 0 ? 1 : months;
-};
+// const calculateDuration = (startDate: string): number => {
+//   const start = new Date(startDate);
+//   const now = new Date();
+//   const months =
+//     (now.getFullYear() - start.getFullYear()) * 12 +
+//     (now.getMonth() - start.getMonth()) +
+//     1;
+//   return months <= 0 ? 1 : months;
+// };
 
 export const experiences: Experience[] = [
   {
     image: AltaViaApplication,
-    title: "Software Engineer Intern",
-    company: "Alta Via Applications",
+title: "Software Engineer Intern (Graduation Internship)",
+    company: "Alta Via Consulting",
     location: "Berlin , Germany",
     type: "Full-time",
-    date: "Apr 2026 - Present",
-    duration: `${calculateDuration("2026-04-01")} months`,
+    date: "April 2026 - September 2026",
+    // duration: `${calculateDuration("2026-04-01")} months`,
+    duration:"6 months",
     summary:
-      "Working on data synchronisation between NetSuite and DATEV, the German accounting and tax platform",
-    technologies: ["JavaScript", "React", "Git", "AWS" ],
+      "Created data synchronisation solution between NetSuite and DATEV German accounting software",
+    technologies: ["NodeJS", "React", "Docker", "AWS" ],
   },
   {
     image: dipawer,
-    title: "Full Stack Developer <br/> (Part-time)",
+    title: "Full Stack Developer",
     company: "Dipawer",
     location: "Tunis , Tunisia",
     type: "Full-time",
-    date: "Aug 2025-Mar 2026",
+    date: "August 2025- March 2026",
     duration: "8 months",
     summary:
       "Worked on Velp, a digital platform for the pet industry that serves both pet owners and professionals",
@@ -57,11 +58,11 @@ export const experiences: Experience[] = [
     company: "Medianet",
     location: "Tunis , Tunisia",
     type: "Full-time",
-    date: "Jun 2025 - Aug 2025",
+    date: "May 2025 - July 2025",
     duration: "3 months",
     summary:
-      "Developed a machine learning model to detect spam emails and generate daily report ",
-    technologies: ["Spring Boot", "PostgreSQL", "Python"],
+      "Set up the deployment pipeline and cloud infrastructure for a client management application",
+    technologies: ["Python", "kubernetes","Docker", "AWS", "Terraform", ],
   },
   {
     image: xsustain,
@@ -69,7 +70,7 @@ export const experiences: Experience[] = [
     company: "Xsustain",
     location: "Tunis , Tunisia",
     type: "Full-time",
-    date: "Jun 2024 - Aug 2024",
+    date: "June 2024 - August 2024",
     duration: "3 months",
     summary: "Developed a restaurant management application",
     technologies: [
@@ -87,7 +88,7 @@ export const experiences: Experience[] = [
     company: "Etnafes",
     location: "Kairouan , Tunisia",
     type: "Full-time",
-    date: "Jun 2023 - Aug 2023",
+    date: "June 2023 - August 2023",
     duration: "3 months",
     summary:
       "Contributed to scaling the company's official website and enhancing its features",

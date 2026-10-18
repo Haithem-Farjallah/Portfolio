@@ -16,8 +16,10 @@ import {
   SiBootstrap,
   SiExpress,
   SiSpring,
+  SiKubernetes,
+  SiTerraform,
+  SiPython,
 } from "react-icons/si";
-import { AiOutlinePython } from "react-icons/ai";
 import { FaGit, FaJs } from "react-icons/fa6";
 
 // Technology icon mapping
@@ -41,6 +43,8 @@ export const techIcons: { [key: string]: JSX.Element } = {
   MySQL: <SiMysql className="text-blue-500" />,
   Bootstrap: <SiBootstrap className="text-purple-500" />,
   SpringBoot: <SiSpring className="text-green-500" />,
-  Python: <AiOutlinePython className="text-yellow-500" />,
-  AWS:<FaAws className="text-yellow-500"/>
+  Python: <SiPython className="text-yellow-500" />,
+  AWS:<FaAws className="text-yellow-500"/>,
+  kubernetes:<SiKubernetes className="text-blue-500" />,
+  Terraform:<SiTerraform className="text-purple-500" />,
 };

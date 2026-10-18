@@ -6,7 +6,7 @@ export default function Intro() {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [buttonText, setButtonText] = useState("Get in touch");
   const [text] = useState(
-    "Hello World! I'm Haithem Farjallah, a software engineering student passionate about coding and problem solving. I enjoy exploring new technologies and creating innovative solutions. I'm eager to learn and grow in this ever-evolving field."
+"Hello World! I’m Haithem Farjallah, a software engineer passionate about building scalable backend systems and reliable cloud infrastructure. I enjoy solving complex problems, designing efficient APIs, and automating everything from infrastructure to deployment. Always learning, always building, and always looking for better ways to engineer solutions."
   );
 
   const content = useRef<HTMLDivElement | null>(null);
@@ -144,13 +144,13 @@ export default function Intro() {
     <div className="relative h-screen md:h-screen flex justify-center items-center overflow-hidden">
       <div
         ref={content}
-        className="absolute inset-0 m-3 overflow-hidden bg-white/5 border border-gray-900/5 dark:border-none backdrop-blur-md shadow flex justify-center items-center rounded-lg"
+        className="absolute inset-0 m-5 overflow-hidden bg-white/5 border border-gray-900/5 dark:border-none backdrop-blur-md shadow flex justify-center items-center rounded-lg"
       >
         {/* Background blur elements */}
-         <div className="absolute w-[650px] h-[650px] bg-pink-600/70 rounded-full blur-[120px] animate-move-around left-1/4 top-1/2"></div>
-      <div className="absolute w-[650px] h-[650px] bg-blue-500/70 rounded-full blur-[120px] animate-move-around-reverse left-3/4 top-1/2"></div>
+        <div className="absolute aspect-square w-[clamp(500px,45vw,1600px)] bg-[rgb(176,84,140)]/70 rounded-full blur-[clamp(80px,7vw,240px)] animate-move-around left-1/4 top-1/2"></div>
+<div className="absolute aspect-square w-[clamp(500px,45vw,1600px)] bg-[rgb(98,112,196)]/70 rounded-full blur-[clamp(80px,7vw,240px)] animate-move-around-reverse left-3/4 top-1/2"></div>
 
-        <div className="relative z-20 mx-auto max-w-xl md:max-w-4xl p-6">
+        <div className="relative z-20 mx-auto max-w-xl md:max-w-5xl p-6">
           <p className="text-[#1c1d20] dark:text-white md:text-3xl font-sans">
             {text.split("").map((char, index) => (
               <span className="heroSection" key={index}>

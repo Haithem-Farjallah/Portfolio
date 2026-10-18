@@ -195,7 +195,7 @@ const ProjectDetails = () => {
             ) : (
               <>
                 <p
-                  className={`max-w-2xl text-xl font-light leading-relaxed sm:text-2xl sm:leading-relaxed ${BODY}`}
+                  className={`max-w-5xl text-xl font-light leading-relaxed sm:text-2xl sm:leading-relaxed ${BODY}`}
                 >
                   {project?.description || "No description available."}
                 </p>

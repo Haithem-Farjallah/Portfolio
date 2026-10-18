@@ -11,6 +11,12 @@ export interface Project {
   isDone: boolean;
 }
 
+import matchArena from "../../assets/projects/codeduels/matchArena.png"
+import Architecture from "../../assets/projects/codeduels/Architecture.png"
+import submissionFlow from "../../assets/projects/codeduels/submission-flow.png"
+
+
+
 /* JobFit Ai images: */
 import jobFitAI1 from "../../assets/projects/jobFit AI/1.png";
 import jobFitAI2 from "../../assets/projects/jobFit AI/2.png";
@@ -64,6 +70,29 @@ const projectBanners = {
 
 
 export const projects: Project[] = [
+  {
+     id: "0",
+    name: "Code Duels",
+    description:
+      "A real-time 1v1 competitive programming platform where two players race to solve the same problem first. Code runs in a sandboxed Judge0 environment through an async SQS pipeline, with live opponent tracking over WebSockets.",
+    technologies: [
+      "Spring Boot",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Redis",
+      "AWS SQS",
+      "AWS S3",
+      "WebSocket",
+      "Docker",
+      "TailwindCSS",
+    ],
+    github: "https://github.com/Haithem-Farjallah/codeduels",
+    // imagePreview: projectBanners.jobFitAI,
+    images: [matchArena, Architecture, submissionFlow],
+    releaseYear: "2026",
+    isDone: true,
+  },
   {
     id: "1",
     name: "JobFit AI",
